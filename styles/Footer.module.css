@@ -1,17 +1,16 @@
 .footer {
-	background: rgb(193, 192, 192);
+	background: rgb(7, 7, 7);
 	height: 5rem;
 	max-width: 100%;
 	display: flex;
 	justify-content: space-between;
-	
 }
 .text {
-	color: black;
-}
-
-.links {
-	color: black;
+	color: white;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
 }
 
 .links a {
