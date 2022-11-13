@@ -3,10 +3,12 @@ import s from '../styles/fagliste.module.css'
 import data from '../data.json'
 export default function FagListe() {
 	return data.map((item) => {
-		const name = item.name
 		return (
-			<Link href={'/velgfag/' + `${name}`.toLowerCase().replace(/\s+/g, '-')}>
-				<p>{item.name}</p>
+			<Link
+				key={item.id}
+				href={'/velgfag/' + item.id.toString()}
+			>
+				<button>{item.name}</button>
 			</Link>
 		)
 	})
