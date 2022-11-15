@@ -17,17 +17,14 @@ export async function getStaticProps() {
 	}
 }
 const VelgFag = ({ data }) => {
+	console.log(data)
 	const list = data.result
 	return (
 		<>
 			<h1>Velg fag du vil regne ut</h1>
 
 			{list.map((item) => {
-				return (
-					<Link href={'/velgfag/' + item.slug.current.toString()}>
-						{item.name}
-					</Link>
-				)
+				return <Link href={'/velgfag/' + item._id.toString()}>{item.name}</Link>
 			})}
 		</>
 	)
