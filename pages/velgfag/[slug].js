@@ -48,44 +48,45 @@ export default function ProfilePage({ data }) {
 				<h1>{data.name}</h1>
 
 				<h2>{data.className}</h2>
+				<div className={s.fields}>
+					{data.arbeidsgrupper > 0 ? (
+						<p className='Arbeidsgrupper'>
+							Jeg har deltatt på <input type='number' /> av {data.arbeidsgrupper} arbeidsgrupper.
+						</p>
+					) : (
+						''
+					)}
 
-				{data.arbeidsgrupper > 0 ? (
-					<p className='Arbeidsgrupper'>
-						Jeg har deltatt på <input type='number' /> av {data.arbeidsgrupper} arbeidsgrupper.
-					</p>
-				) : (
-					''
-				)}
+					{data.storgrupper > 0 ? (
+						<div className='storgrupper'>
+							Jeg har deltatt på <input type='number' /> av {data.storgrupper} storgrupper.
+						</div>
+					) : (
+						''
+					)}
 
-				{data.storgrupper > 0 ? (
-					<div className='storgrupper'>
-						Jeg har deltatt på <input type='number' /> av {data.storgrupper} storgrupper.
-					</div>
-				) : (
-					''
-				)}
-
-				{data.oppgaver > 0 ? (
-					<p className='oppgaver'>
-						Jeg har deltatt på <input type='number' /> av {data.oppgaver} oppgaver.
-					</p>
-				) : (
-					''
-				)}
-				{data.kommentering > 0 ? (
-					<p className='kommentering'>
-						Jeg har deltatt på <input type='number' /> av {data.kommentering} kommenteringer.
-					</p>
-				) : (
-					''
-				)}
-				{data.seminar > 0 ? (
-					<p className='seminar'>
-						Jeg har deltatt på <input type='number' /> av {data.seminar} seminar.
-					</p>
-				) : (
-					''
-				)}
+					{data.oppgaver > 0 ? (
+						<p className='oppgaver'>
+							Jeg har deltatt på <input type='number' /> av {data.oppgaver} oppgaver.
+						</p>
+					) : (
+						''
+					)}
+					{data.kommentering > 0 ? (
+						<p className='kommentering'>
+							Jeg har deltatt på <input type='number' /> av {data.kommentering} kommenteringer.
+						</p>
+					) : (
+						''
+					)}
+					{data.seminar > 0 ? (
+						<p className='seminar'>
+							Jeg har deltatt på <input type='number' /> av {data.seminar} seminar.
+						</p>
+					) : (
+						''
+					)}
+				</div>
 			</div>
 
 			<button
