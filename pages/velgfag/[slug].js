@@ -7,42 +7,49 @@ import Resultat from '../resultat'
 import Link from 'next/link'
 
 export default function ProfilePage({ data }) {
+	const [click, setClick] = useState(false)
 	const [message, setMessage] = useState()
 	const [updated, setUpdated] = useState(message)
 	const handleClick = () => {
 		setUpdated(message)
 	}
 	const userInput = +message + +updated
-	console.log(userInput)
 	return (
 		<>
-			<div className={s.container}>
-				<h1>{data.name}</h1>
+			{click == false ? (
+				<div className={s.container}>
+					<h1>{data.name}</h1>
 
-				<h2>{data.className}</h2>
+					<h2>{data.className}</h2>
 
-				<div className={s.fields}></div>
-				{data.classes.map((item) => {
-					return (
-						<p>
-							Jeg har deltat i
-							<input
-								key={item._id}
-								type='number'
-								onChange={(e) => {
-									setMessage(e.target.value), handleClick()
-								}}
-							/>
-							av {item.class}
-						</p>
-					)
-				})}
-			</div>
-			<button props={userInput}>
-				<Link href='/resultat'>Regn ut</Link>
-			</button>
+					<div className={s.fields}></div>
+					{data.classes.map((item) => {
+						return (
+							<p>
+								Jeg har deltat i
+								<input
+									key={item._id}
+									type='number'
+									onChange={(e) => {
+										setMessage(e.target.value), handleClick()
+									}}
+								/>
+								av {item.class}
+							</p>
+						)
+					})}
+				</div>
+			) : (
+				<Result value={userInput} />
+			)}
+
+			<button onClick={() => setClick(true)}>Regn ut</button>
 		</>
 	)
+}
+
+export const Result = (userInput) => {
+	return console.log(userInput)
 }
 
 export async function getStaticPaths() {
