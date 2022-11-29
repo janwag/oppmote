@@ -19,30 +19,12 @@ export default {
 			type: 'string',
 		},
 		{
-			name: 'arbeidsgrupper',
-			title: 'Arbeidsgrupper',
-			type: 'number',
+			name: 'classes',
+			title: 'classses',
+			type: 'array',
+			of: [{ type: 'classes' }],
 		},
-		{
-			name: 'storgrupper',
-			title: 'Storgrupper',
-			type: 'number',
-		},
-		{
-			name: 'oppgaver',
-			title: 'Oppgaver',
-			type: 'number',
-		},
-		{
-			name: 'kommentering',
-			title: 'Kommentering',
-			type: 'number',
-		},
-		{
-			name: 'seminar',
-			title: 'Seminar',
-			type: 'number',
-		},
+
 		{
 			name: 'slug',
 			title: 'Slug',

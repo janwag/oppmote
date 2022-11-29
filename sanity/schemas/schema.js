@@ -7,6 +7,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // We import object and document schemas
 
 import data from './data'
+import classes from './classes'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -18,5 +19,6 @@ export default createSchema({
 		// The following are document types which will appear
 		// in the studio.
 		data,
+		classes,
 	]),
 })

@@ -1,7 +1,49 @@
 import groq from 'groq'
 import client from './client'
 import s from '../../styles/slug.module.css'
-import { useState } from 'react'
+import { useEffect, useState, useRef, createRef } from 'react'
+import React from 'react'
+import Resultat from '../resultat'
+import Link from 'next/link'
+
+export default function ProfilePage({ data }) {
+	const [message, setMessage] = useState()
+	const [updated, setUpdated] = useState(message)
+	const handleClick = () => {
+		setUpdated(message)
+	}
+	const userInput = +message + +updated
+	console.log(userInput)
+	return (
+		<>
+			<div className={s.container}>
+				<h1>{data.name}</h1>
+
+				<h2>{data.className}</h2>
+
+				<div className={s.fields}></div>
+				{data.classes.map((item) => {
+					return (
+						<p>
+							Jeg har deltat i
+							<input
+								key={item._id}
+								type='number'
+								onChange={(e) => {
+									setMessage(e.target.value), handleClick()
+								}}
+							/>
+							av {item.class}
+						</p>
+					)
+				})}
+			</div>
+			<button props={userInput}>
+				<Link href='/resultat'>Regn ut</Link>
+			</button>
+		</>
+	)
+}
 
 export async function getStaticPaths() {
 	const respon = await client.fetch(groq`*[_type == 'data']`)
@@ -18,14 +60,14 @@ export async function getStaticPaths() {
 	}
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps(connumber) {
 	// It's important to default the slug so that it doesn't return "undefined"
 
 	// const url = 'https://qmgpu00g.api.sanity.io/v1/data/query/production?query='
-	const { slug = '' } = context.params
+	const { slug = '' } = connumber.params
 	const data = await client.fetch(
 		`
-    *[_type == "data" && slug.current == $slug][0]
+    *[_type == "data" && slug.current == $slug][0]{name, slug, className, code, classes}
   `,
 		{ slug }
 	)
@@ -34,66 +76,4 @@ export async function getStaticProps(context) {
 			data,
 		},
 	}
-}
-
-export const clickHandler = () => {
-	console.log(container.input.value)
-}
-
-export default function ProfilePage({ data }) {
-	console.log(data)
-	return (
-		<>
-			<div className={s.container}>
-				<h1>{data.name}</h1>
-
-				<h2>{data.className}</h2>
-				<div className={s.fields}>
-					{data.arbeidsgrupper > 0 ? (
-						<p className='Arbeidsgrupper'>
-							Jeg har deltatt på <input type='number' /> av {data.arbeidsgrupper} arbeidsgrupper.
-						</p>
-					) : (
-						''
-					)}
-
-					{data.storgrupper > 0 ? (
-						<div className='storgrupper'>
-							Jeg har deltatt på <input type='number' /> av {data.storgrupper} storgrupper.
-						</div>
-					) : (
-						''
-					)}
-
-					{data.oppgaver > 0 ? (
-						<p className='oppgaver'>
-							Jeg har deltatt på <input type='number' /> av {data.oppgaver} oppgaver.
-						</p>
-					) : (
-						''
-					)}
-					{data.kommentering > 0 ? (
-						<p className='kommentering'>
-							Jeg har deltatt på <input type='number' /> av {data.kommentering} kommenteringer.
-						</p>
-					) : (
-						''
-					)}
-					{data.seminar > 0 ? (
-						<p className='seminar'>
-							Jeg har deltatt på <input type='number' /> av {data.seminar} seminar.
-						</p>
-					) : (
-						''
-					)}
-				</div>
-			</div>
-
-			<button
-				className={s.regn_ut}
-				onClick={clickHandler}>
-				Regn ut
-			</button>
-		</>
-	)
 }
