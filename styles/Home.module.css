@@ -6,4 +6,8 @@
 	background-image: url(/assets/Background.svg);
 	max-width: 100%;
 	min-height: 100%;
+	display: flex;
+	align-items: center;
+	gap: 6rem;
+	flex-direction: column;
 }

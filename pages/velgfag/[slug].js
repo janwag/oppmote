@@ -3,17 +3,22 @@ import client from './client'
 import s from '../../styles/slug.module.css'
 import { useEffect, useState, useRef, createRef } from 'react'
 import React from 'react'
-import Resultat from '../resultat'
 import Link from 'next/link'
+import Result from '../../components/resultPage'
 
 export default function ProfilePage({ data }) {
 	const [click, setClick] = useState(false)
 	const [message, setMessage] = useState()
 	const [updated, setUpdated] = useState(message)
 	const handleClick = () => {
-		setUpdated(message)
+		setUpdated(message + setMessage)
+		console.log(message)
 	}
-	const userInput = +message + +updated
+	console.log(updated)
+	useEffect(() => {
+		setMessage('')
+	}, [])
+
 	return (
 		<>
 			{click == false ? (
@@ -22,10 +27,9 @@ export default function ProfilePage({ data }) {
 
 					<h2>{data.className}</h2>
 
-					<div className={s.fields}></div>
-					{data.classes.map((item) => {
+					{data.classes?.map((item) => {
 						return (
-							<p>
+							<p key={item._key}>
 								Jeg har deltat i
 								<input
 									key={item._id}
@@ -40,16 +44,15 @@ export default function ProfilePage({ data }) {
 					})}
 				</div>
 			) : (
-				<Result value={userInput} />
+				<Result
+					input={userInput}
+					data={data}
+				/>
 			)}
 
 			<button onClick={() => setClick(true)}>Regn ut</button>
 		</>
 	)
-}
-
-export const Result = (userInput) => {
-	return console.log(userInput)
 }
 
 export async function getStaticPaths() {
@@ -68,9 +71,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(connumber) {
-	// It's important to default the slug so that it doesn't return "undefined"
-
-	// const url = 'https://qmgpu00g.api.sanity.io/v1/data/query/production?query='
 	const { slug = '' } = connumber.params
 	const data = await client.fetch(
 		`
