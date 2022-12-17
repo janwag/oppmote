@@ -4,9 +4,7 @@ import groq from 'groq'
 
 export async function getStaticProps() {
 	const url = 'https://qmgpu00g.api.sanity.io/v1/data/query/production?query='
-	const data = await fetch(url + groq`*[_type=="data"]`).then((data) =>
-		data.json()
-	)
+	const data = await fetch(url + groq`*[_type=="data"]`).then((data) => data.json())
 
 	return {
 		props: {
@@ -23,10 +21,10 @@ const VelgFag = ({ data }) => {
 
 			{list.map((item) => {
 				return (
-					<div className={s.link}>
-						<Link href={'/velgfag/' + item.slug.current.toString()}>
-							{item.name}
-						</Link>
+					<div
+						className={s.link}
+						key={item._id}>
+						<Link href={'/velgfag/' + item.slug.current.toString()}>{item.name}</Link>
 					</div>
 				)
 			})}
