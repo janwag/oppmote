@@ -14,7 +14,7 @@ export default function ProfilePage({ data }) {
 		setUpdated(message + setMessage)
 		console.log(message)
 	}
-	console.log(updated)
+	// console.log(updated)
 	useEffect(() => {
 		setMessage('')
 	}, [])
