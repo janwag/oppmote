@@ -1,7 +1,0 @@
-.container {
-	display: flex;
-	flex-direction: column;
-	max-height: 100vh;
-	min-width: 100vw;
-	justify-content: space-between;
-}
