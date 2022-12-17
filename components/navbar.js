@@ -13,6 +13,7 @@ export default function Navbar() {
 					src={logo}
 					width={1230}
 					height={1143}
+					alt={'test'}
 				/>
 			</div>
 		</div>
