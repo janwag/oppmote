@@ -1,5 +1,5 @@
 import groq from 'groq'
-import client from '../client'
+import client from '../../client'
 import s from '../../styles/slug.module.css'
 import { useEffect, useState } from 'react'
 import React from 'react'
