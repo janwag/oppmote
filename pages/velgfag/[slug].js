@@ -1,56 +1,50 @@
 import groq from 'groq'
 import client from '../client'
 import s from '../../styles/slug.module.css'
-import { useEffect, useState, useRef, createRef } from 'react'
+import { useEffect, useState } from 'react'
 import React from 'react'
 import Link from 'next/link'
 import Result from '../../components/resultPage'
+import { useRef } from 'react'
+import { useForm } from 'react-hook-form'
 
 export default function ProfilePage({ data }) {
-	const [click, setClick] = useState(false)
-	const [message, setMessage] = useState()
-	const [updated, setUpdated] = useState(message)
-	const handleClick = () => {
-		setUpdated(message + setMessage)
-		console.log(message)
+	const [caluculate, setCalculate] = useState([])
+	const { register, handleSubmit } = useForm()
+	const onSubmit = (data) => {
+		setCalculate(data)
 	}
-	// console.log(updated)
-	useEffect(() => {
-		setMessage('')
-	}, [])
-
 	return (
 		<>
-			{click == false ? (
-				<div className={s.container}>
+			{caluculate == false ? (
+				<form
+					className={s.container}
+					onSubmit={handleSubmit(onSubmit)}>
 					<h1>{data.name}</h1>
 
 					<h2>{data.className}</h2>
 
 					{data.classes?.map((item) => {
 						return (
-							<p key={item._key}>
-								Jeg har deltat i
+							<>
+								<p key={item._key}>Jeg har deltat i</p>
 								<input
 									key={item._id}
 									type='number'
-									onChange={(e) => {
-										setMessage(e.target.value), handleClick()
-									}}
+									{...register(item.name)}
 								/>
-								av {item.class}
-							</p>
+								<p>av {item.class}</p>
+							</>
 						)
 					})}
-				</div>
+					<input type='submit' />
+				</form>
 			) : (
 				<Result
-					input={userInput}
-					data={data}
+					userInput={caluculate}
+					classesValue={data.classes}
 				/>
 			)}
-
-			<button onClick={() => setClick(true)}>Regn ut</button>
 		</>
 	)
 }
