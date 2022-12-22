@@ -26,15 +26,15 @@ export default function ProfilePage({ data }) {
 
 					{data.classes?.map((item) => {
 						return (
-							<>
-								<p key={item._key}>Jeg har deltat i</p>
+							<div key={item._key}>
+								<p>Jeg har deltat i</p>
 								<input
 									key={item._id}
 									type='number'
 									{...register(item.name)}
 								/>
 								<p>av {item.class}</p>
-							</>
+							</div>
 						)
 					})}
 					<input type='submit' />

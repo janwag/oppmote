@@ -36,13 +36,11 @@ const Result = ({ userInput, classesValue }) => {
 
 	const percentCalc = (sum(arr) / arraySum(array)) * 100
 	return (
-		<>
-			<div>
-				<h1>
-					Din oppmøte prosent er <span>{percentCalc}%</span>
-				</h1>
-			</div>
-		</>
+		<div>
+			<h1>
+				Din oppmøte prosent er <span>{percentCalc}%</span>
+			</h1>
+		</div>
 	)
 }
 
