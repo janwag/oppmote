@@ -1,10 +1,11 @@
+import Link from 'next/link'
+
 const Result = ({ userInput, classesValue }) => {
 	const array = classesValue.map((item) => {
 		const array = item.class
 		return array
 	})
 
-	console.log(array)
 	const arraySum = (array) => {
 		let arraySum = 0 // initialize sum
 
@@ -40,6 +41,7 @@ const Result = ({ userInput, classesValue }) => {
 			<h1>
 				Din oppmøte prosent er <span>{percentCalc}%</span>
 			</h1>
+			<Link href={'/'}>Ny utregning</Link>
 		</div>
 	)
 }
