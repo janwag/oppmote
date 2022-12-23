@@ -13,7 +13,6 @@ export async function getStaticProps() {
 	}
 }
 const VelgFag = ({ data }) => {
-	console.log(data)
 	const list = data.result
 	return (
 		<div className={s.container}>
