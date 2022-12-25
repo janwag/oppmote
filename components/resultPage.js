@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import s from '../styles/result.module.css'
 
 const Result = ({ userInput, classesValue }) => {
 	const array = classesValue.map((item) => {
@@ -37,9 +38,9 @@ const Result = ({ userInput, classesValue }) => {
 
 	const percentCalc = (sum(arr) / arraySum(array)) * 100
 	return (
-		<div>
-			<h1>
-				Din oppmøte prosent er <span>{percentCalc}%</span>
+		<div className={s.container}>
+			<h1 className={s.header}>
+				Din oppmøte prosent er <span>{Math.floor(percentCalc)}%</span>
 			</h1>
 			<Link href={'/'}>Ny utregning</Link>
 		</div>
