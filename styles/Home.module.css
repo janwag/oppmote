@@ -34,14 +34,6 @@
 	border-radius: 1rem;
 	font-size: 1.6rem;
 	font-weight: 500;
-}
-
-.link :any-link {
 	text-decoration: none;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	color: black;
-	height: 100%;
-	width: 100%;
 }

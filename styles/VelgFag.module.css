@@ -26,9 +26,10 @@
 	max-width: 100%;
 	overflow: hidden;
 	overflow-y: scroll;
+	list-style-type: none;
 }
 
-.list li {
+.list li :any-link {
 	background-color: aliceblue;
 	width: 20rem;
 	border-radius: 1rem;
@@ -36,6 +37,6 @@
 	align-items: center;
 	justify-content: center;
 	padding: 1rem 0;
-
-	list-style-type: none;
+	text-decoration: none;
+	color: black;
 }
