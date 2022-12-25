@@ -6,7 +6,12 @@
 	display: flex;
 	align-items: center;
 	gap: 2rem;
-	max-height: 100%;
+	height: 100%;
+	background-image: url('../assets/BG site 3.svg');
+	background-position: center;
+	background-size: contain;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .fields {
@@ -17,4 +22,23 @@
 }
 .test {
 	background-color: #333;
+}
+
+.container h2 {
+	text-decoration: underline;
+	display: flex;
+	justify-content: center;
+	text-underline-offset: 1rem;
+}
+
+.inputContainer {
+	display: flex;
+	max-width: 100%;
+	font-size: 1.4rem;
+	gap: 1rem;
+}
+
+.input {
+	border: none;
+	max-width: 3rem;
 }
