@@ -17,16 +17,17 @@ const VelgFag = ({ data }) => {
 	return (
 		<div className={s.container}>
 			<h1>Velg fag du vil regne ut</h1>
-
-			{list.map((item) => {
-				return (
-					<div
-						className={s.link}
-						key={item._id}>
-						<Link href={'/velgfag/' + item.slug.current.toString()}>{item.name}</Link>
-					</div>
-				)
-			})}
+			<ul className={s.list}>
+				{list.map((item) => {
+					return (
+						<li
+							className={s.link}
+							key={item._id}>
+							<Link href={'/velgfag/' + item.slug.current.toString()}>{item.name}</Link>
+						</li>
+					)
+				})}
+			</ul>
 		</div>
 	)
 }
