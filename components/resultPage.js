@@ -39,10 +39,12 @@ const Result = ({ userInput, classesValue }) => {
 	const percentCalc = (sum(arr) / arraySum(array)) * 100
 	return (
 		<div className={s.container}>
-			<h1 className={s.header}>
-				Din oppmøte prosent er <span>{Math.floor(percentCalc)}%</span>
-			</h1>
-			<Link href={'/'}>Ny utregning</Link>
+			<div className={s.content}>
+				<h1 className={s.header}>
+					Din oppmøte prosent er <span>{Math.floor(percentCalc)}%</span>
+				</h1>
+				<Link href={'/'}>Ny utregning</Link>
+			</div>
 		</div>
 	)
 }

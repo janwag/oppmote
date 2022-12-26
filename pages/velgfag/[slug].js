@@ -1,11 +1,8 @@
+import s from '../../styles/slug.module.css'
 import groq from 'groq'
 import client from '../../client'
-import s from '../../styles/slug.module.css'
-import { useEffect, useState } from 'react'
-import React from 'react'
-import Link from 'next/link'
+import { useState } from 'react'
 import Result from '../../components/resultPage'
-import { useRef } from 'react'
 import { useForm } from 'react-hook-form'
 
 export default function ProfilePage({ data }) {
@@ -20,27 +17,29 @@ export default function ProfilePage({ data }) {
 				<form
 					className={s.container}
 					onSubmit={handleSubmit(onSubmit)}>
-					<h1>{data.name}</h1>
-
-					<h2>{data.className}</h2>
-
-					{data.classes?.map((item) => {
-						return (
-							<div
-								key={item._key}
-								className={s.inputContainer}>
-								<p>Jeg har deltat i </p>
-								<input
-									className={s.input}
-									key={item._id}
-									type='number'
-									{...register(item.name)}
-								/>
-								av {item.class}
-							</div>
-						)
-					})}
-					<input type='submit' />
+					<h1>{data.className}</h1>
+					<div className={s.inputWrapper}>
+						{data.classes?.map((item) => {
+							return (
+								<div
+									key={item._key}
+									className={s.inputContainer}>
+									<p>Jeg har deltat på</p>
+									<input
+										className={s.input}
+										key={item._id}
+										type='number'
+										{...register(item.name)}
+									/>
+									av {item.class}
+								</div>
+							)
+						})}
+					</div>
+					<input
+						className={s.button}
+						type='submit'
+					/>
 				</form>
 			) : (
 				<Result
