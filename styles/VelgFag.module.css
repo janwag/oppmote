@@ -25,8 +25,9 @@
 	align-items: center;
 	gap: 2rem;
 	padding: 1rem 0;
-	max-height: 34rem;
 	max-width: 100%;
+	min-height: 20rem;
+	max-height: 35rem;
 	overflow: hidden;
 	overflow-y: scroll;
 	list-style-type: none;
