@@ -11,6 +11,8 @@
 	justify-content: space-evenly;
 	align-items: center;
 	width: 100%;
+	font-size: 1.1rem;
+	font-weight: 700;
 }
 
 .links a {

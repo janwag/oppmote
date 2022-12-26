@@ -4,9 +4,7 @@ export default function Footer() {
 	return (
 		<div className={styles.footer}>
 			<div className={styles.text}>
-				<p>Test prosjekt </p>
-				<p>2022</p>
-				<p>Sander Tonheim</p>
+				<p>© Copy right Foks AS 2022</p>
 			</div>
 		</div>
 	)
