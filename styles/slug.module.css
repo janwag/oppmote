@@ -1,17 +1,22 @@
 .container {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
 
 	display: flex;
 	align-items: center;
 	gap: 2rem;
 	height: 100%;
 	background-image: url('../assets/BG site 3.svg');
-	background-position: center;
 	background-size: contain;
 	background-size: cover;
 	background-repeat: no-repeat;
+}
+
+.container h1 {
+	color: white;
+	padding: 1rem;
+	font-size: 2.5rem;
+	font-weight: 600;
 }
 
 .fields {
@@ -41,4 +46,25 @@
 .input {
 	border: none;
 	max-width: 3rem;
+}
+
+.inputWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	padding: 1rem 0;
+}
+
+.button {
+	background-color: aliceblue;
+	width: 20rem;
+	border-radius: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem 0;
+	text-decoration: none;
+	color: black;
+	border: none;
+	font-size: 1.3rem;
 }

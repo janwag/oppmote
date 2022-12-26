@@ -1,35 +1,39 @@
 .container {
 	max-width: 100%;
 	height: 100%;
-
 	background-image: url(../assets/BG.svg);
 	background-position: center;
 	background-size: contain;
 	background-size: cover;
 	background-repeat: no-repeat;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 4rem;
-	padding: 2rem 0;
 }
 
 .header {
 	color: white;
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-	align-items: center;
+	padding: 1rem;
+	font-size: 2.5rem;
+	font-weight: 600;
 }
 
 .container a {
-	background-color: rgb(255, 255, 255);
-	height: 3rem;
-	width: 10rem;
+	background-color: aliceblue;
+	width: 20rem;
 	border-radius: 1rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	padding: 1rem 0;
 	text-decoration: none;
 	color: black;
+	border: none;
+	font-size: 1.3rem;
+}
+
+.content {
+	padding: 8rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-height: 30rem;
+	gap: 4rem;
 }
