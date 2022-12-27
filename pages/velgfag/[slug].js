@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form'
 
 export default function ProfilePage({ data }) {
 	const [caluculate, setCalculate] = useState([])
+	const [back, setBack] = useState(false)
 	const { register, handleSubmit } = useForm()
 	const onSubmit = (data) => {
 		setCalculate(data)
@@ -42,10 +43,12 @@ export default function ProfilePage({ data }) {
 					/>
 				</form>
 			) : (
-				<Result
-					userInput={caluculate}
-					classesValue={data.classes}
-				/>
+				<>
+					<Result
+						userInput={caluculate}
+						classesValue={data.classes}
+					/>
+				</>
 			)}
 		</>
 	)
