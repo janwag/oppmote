@@ -1,6 +1,6 @@
 .content {
-	height: 100vh;
 	max-width: 100%;
-	align-items: center;
+	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 }
