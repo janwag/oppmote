@@ -32,7 +32,7 @@ export default function ProfilePage({ data }) {
 											type='number'
 											{...register(item.name)}
 										/>
-										av {item.name}
+										av {item.class} {item.name}
 									</p>
 								</div>
 							)
