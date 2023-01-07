@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import s from '../../styles/VelgFag.module.css'
 import groq from 'groq'
+import Header from '../../components/Header'
 
 export async function getStaticProps() {
 	const url = 'https://qmgpu00g.api.sanity.io/v1/data/query/production?query='
@@ -16,7 +17,7 @@ const VelgFag = ({ data }) => {
 	const list = data.result
 	return (
 		<div className={s.container}>
-			<h1>Velg fag du vil regne ut</h1>
+			<Header text={'Velg fag du vil regne ut'} />
 			<ul className={s.list}>
 				{list.map((item) => {
 					return (

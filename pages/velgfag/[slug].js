@@ -4,6 +4,7 @@ import client from '../../client'
 import { useState } from 'react'
 import Result from '../../components/resultPage'
 import { useForm } from 'react-hook-form'
+import ClassNameHeader from '../../components/ClassNameHeader'
 
 export default function ProfilePage({ data }) {
 	const [caluculate, setCalculate] = useState([])
@@ -17,7 +18,7 @@ export default function ProfilePage({ data }) {
 				<form
 					className={s.container}
 					onSubmit={handleSubmit(onSubmit)}>
-					<h1>{data.className}</h1>
+					<ClassNameHeader text={data.className} />
 					<div className={s.inputWrapper}>
 						{data.classes?.map((item) => {
 							return (
