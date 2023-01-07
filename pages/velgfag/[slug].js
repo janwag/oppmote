@@ -7,7 +7,6 @@ import { useForm } from 'react-hook-form'
 
 export default function ProfilePage({ data }) {
 	const [caluculate, setCalculate] = useState([])
-	const [back, setBack] = useState(false)
 	const { register, handleSubmit } = useForm()
 	const onSubmit = (data) => {
 		setCalculate(data)
@@ -25,14 +24,16 @@ export default function ProfilePage({ data }) {
 								<div
 									key={item._key}
 									className={s.inputContainer}>
-									<p>Jeg har deltat på</p>
-									<input
-										className={s.input}
-										key={item._id}
-										type='number'
-										{...register(item.name)}
-									/>
-									av {item.class}
+									<p>
+										Jeg har deltat på
+										<input
+											className={s.input}
+											key={item._id}
+											type='number'
+											{...register(item.name)}
+										/>
+										av {item.name}
+									</p>
 								</div>
 							)
 						})}
