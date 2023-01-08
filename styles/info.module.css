@@ -1,0 +1,9 @@
+.container {
+	max-width: 100%;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url('../assets/backgroundSite2.svg');
+	display: flex;
+	flex-direction: column;
+}

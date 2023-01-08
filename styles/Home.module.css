@@ -17,13 +17,6 @@
 	gap: 7rem;
 }
 
-.container h1 {
-	color: white;
-	padding: 1rem;
-	font-size: 2.5rem;
-	font-weight: 600;
-}
-
 .link :any-link {
 	height: 4rem;
 	width: 20rem;

@@ -11,13 +11,6 @@
 	flex-direction: column;
 }
 
-.container h1 {
-	color: white;
-	padding: 1rem;
-	font-size: 2.5rem;
-	font-weight: 600;
-}
-
 .list {
 	display: flex;
 	flex-direction: column;
