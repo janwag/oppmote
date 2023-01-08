@@ -17,7 +17,7 @@ function info() {
 			</ul>
 			<h2>Om tjenesten</h2>
 			<p>
-				Applikasjonen "Oppmøteprosent" er en tjeneste som lar deg regne ut din prosent av obligatorisk oppmøte på studiet. Formålet er at du på en enkel og effektiv måte skal kunne skrive inn hva du
+				Applikasjonen '"Oppmøteprosent"' er en tjeneste som lar deg regne ut din prosent av obligatorisk oppmøte på studiet. Formålet er at du på en enkel og effektiv måte skal kunne skrive inn hva du
 				har deltatt på. Deretter vil du få vite hvilken prosent du havner på, og om du følgelig er innenfor eller utenfor det obligatoriske kravet om 75% deltakelse.
 			</p>
 			<p>
@@ -37,7 +37,7 @@ function info() {
 				Tjenesten er på ingen måte assosiert med Universitetet i Bergen eller andre aktører, og er ene og alene en tjeneste fra Foks AS.
 			</p>
 			<p>
-				Jan Martin Wåge er selv student på tredje studieår ved Det juridiske fakultet ved Universitetet i Bergen. Etter flere år hvor man måtte forholde seg til "utfordrende" formler på fakultetets
+				Jan Martin Wåge er selv student på tredje studieår ved Det juridiske fakultet ved Universitetet i Bergen. Etter flere år hvor man måtte forholde seg til' "utfordrende"' formler på fakultetets
 				nettsider når det kom til oppmøteberegning, kom ideen om å lage dette til et digitalt system. Her holder systemet kontroll på hva som er maksimum deltakelse, og regner ut en prosent basert på
 				input fra din deltakelse. Dette er et mye bedre system, og man slipper egne kalkulatorer og excel-ark som kan skape krøll i utregningen.
 			</p>
