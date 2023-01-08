@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import s from '../styles/info.module.css'
 function info() {
 	return (
@@ -53,7 +54,7 @@ function info() {
 			</p>
 			<p>
 				Tjenesten er sist oppdatert 04.11.2022.
-				<a href='changelog.html'>Gå til vår changelog ved å trykke her.</a> Vilkår er sist oppdatert 04.11.2022.
+				<Link href='/pagelog'>Gå til vår changelog ved å trykke her.</Link> Vilkår er sist oppdatert 04.11.2022.
 			</p>
 			{/* <!-- Jeg kan manuelt legge inn dato her etterhvert som tjenesten oppdateres når den er live --> */}
 			{/* <footer>
