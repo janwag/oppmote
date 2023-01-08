@@ -28,6 +28,9 @@ export default function ProfilePage({ data }) {
 									<p>
 										Jeg har deltat på
 										<input
+											min='0'
+											max={item.class}
+											required
 											className={s.input}
 											key={item._id}
 											type='number'
