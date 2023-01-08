@@ -17,8 +17,8 @@ function info() {
 			</ul>
 			<h2>Om tjenesten</h2>
 			<p>
-				Applikasjonen '"Oppmøteprosent"' er en tjeneste som lar deg regne ut din prosent av obligatorisk oppmøte på studiet. Formålet er at du på en enkel og effektiv måte skal kunne skrive inn hva du
-				har deltatt på. Deretter vil du få vite hvilken prosent du havner på, og om du følgelig er innenfor eller utenfor det obligatoriske kravet om 75% deltakelse.
+				Applikasjonen {`"Oppmøteprosent"`} er en tjeneste som lar deg regne ut din prosent av obligatorisk oppmøte på studiet. Formålet er at du på en enkel og effektiv måte skal kunne skrive inn hva
+				du har deltatt på. Deretter vil du få vite hvilken prosent du havner på, og om du følgelig er innenfor eller utenfor det obligatoriske kravet om 75% deltakelse.
 			</p>
 			<p>
 				I applikasjonen er det lagt inn enkelte forhåndsdefinerte fag. Dette gjør det enda lettere å regne ut sin prosent, da man slipper å søke opp hva som kreves av de ulike aktivitetene. Alt i alt
@@ -26,7 +26,7 @@ function info() {
 				til det obligatoriske oppmøtet i det emnet. Det jobbes kontinuerlig med å få lagt inn flere fag, og å kunne ekspandere til andre studiesteder og emner.
 			</p>
 			<h2>Hvem står bak tjenesten</h2>
-			Det er aksjeselskapet Foks AS som står som juridisk eier av tjenesten. Juridisk navn: Foks AS Organisasjonsnummer:{' '}
+			Det er aksjeselskapet Foks AS som står som juridisk eier av tjenesten. Juridisk navn: Foks AS Organisasjonsnummer:
 			<a href='https://w2.reg.no/enhet/sok/detalj.jsp?orgnr=923302727'>923 302 727</a>
 			Epost-adresse: <a href='mailto:post@foks.no?subject=Mail fra Oppømteprosent'>post@foks.no</a>
 			<p>
@@ -37,9 +37,9 @@ function info() {
 				Tjenesten er på ingen måte assosiert med Universitetet i Bergen eller andre aktører, og er ene og alene en tjeneste fra Foks AS.
 			</p>
 			<p>
-				Jan Martin Wåge er selv student på tredje studieår ved Det juridiske fakultet ved Universitetet i Bergen. Etter flere år hvor man måtte forholde seg til' "utfordrende"' formler på fakultetets
-				nettsider når det kom til oppmøteberegning, kom ideen om å lage dette til et digitalt system. Her holder systemet kontroll på hva som er maksimum deltakelse, og regner ut en prosent basert på
-				input fra din deltakelse. Dette er et mye bedre system, og man slipper egne kalkulatorer og excel-ark som kan skape krøll i utregningen.
+				Jan Martin Wåge er selv student på tredje studieår ved Det juridiske fakultet ved Universitetet i Bergen. Etter flere år hvor man måtte forholde seg til{' "utfordrende"'} formler på
+				fakultetets nettsider når det kom til oppmøteberegning, kom ideen om å lage dette til et digitalt system. Her holder systemet kontroll på hva som er maksimum deltakelse, og regner ut en
+				prosent basert på input fra din deltakelse. Dette er et mye bedre system, og man slipper egne kalkulatorer og excel-ark som kan skape krøll i utregningen.
 			</p>
 			<h2 id='vilkar'>Vilkår og ansvarsfraskrivelse</h2>
 			<p>
