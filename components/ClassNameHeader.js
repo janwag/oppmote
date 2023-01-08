@@ -1,5 +1,6 @@
+import s from '../styles/ClassNameHeader.module.css'
 function ClassNameHeader({ text }) {
 	console.log(text)
-	return <h1>{text}</h1>
+	return <h1 className={s.header}>{text}</h1>
 }
 export default ClassNameHeader
