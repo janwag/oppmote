@@ -60,23 +60,8 @@ export default function ProfilePage({ data }) {
 	)
 }
 
-// export async function getStaticPaths() {
-// 	const respon = await client.fetch(groq`*[_type == 'data']`)
-
-// 	const paths = respon.map((item) => {
-// 		return {
-// 			params: { slug: item.slug.current },
-// 		}
-// 	})
-
-// 	return {
-// 		paths,
-// 		fallback: false,
-// 	}
-// }
-
-export async function getServerSideProps(connumber) {
-	const { slug = '' } = connumber.params
+export async function getServerSideProps(context) {
+	const { slug = '' } = context.params
 	const data = await client.fetch(
 		`
     *[_type == "data" && slug.current == $slug][0]{name, slug, className, code, classes}
