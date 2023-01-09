@@ -13,7 +13,7 @@ function Render() {
 		<ul>
 			{data.result?.map((item) => {
 				return (
-					<li>
+					<li key={item._id}>
 						{item.date}: {item.text}
 					</li>
 				)
