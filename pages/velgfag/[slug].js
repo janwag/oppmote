@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form'
 import ClassNameHeader from '../../components/ClassNameHeader'
 
 export default function ProfilePage({ data }) {
+	console.log(data)
 	const [caluculate, setCalculate] = useState([])
 	const { register, handleSubmit } = useForm()
 	const onSubmit = (data) => {
@@ -59,22 +60,22 @@ export default function ProfilePage({ data }) {
 	)
 }
 
-export async function getStaticPaths() {
-	const respon = await client.fetch(groq`*[_type == 'data']`)
+// export async function getStaticPaths() {
+// 	const respon = await client.fetch(groq`*[_type == 'data']`)
 
-	const paths = respon.map((item) => {
-		return {
-			params: { slug: item.slug.current },
-		}
-	})
+// 	const paths = respon.map((item) => {
+// 		return {
+// 			params: { slug: item.slug.current },
+// 		}
+// 	})
 
-	return {
-		paths,
-		fallback: false,
-	}
-}
+// 	return {
+// 		paths,
+// 		fallback: false,
+// 	}
+// }
 
-export async function getStaticProps(connumber) {
+export async function getServerSideProps(connumber) {
 	const { slug = '' } = connumber.params
 	const data = await client.fetch(
 		`
