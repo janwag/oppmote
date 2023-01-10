@@ -22,9 +22,6 @@
 	overflow-y: scroll;
 	list-style-type: none;
 }
-.list ul {
-	align-self: center;
-}
 
 .list li :any-link {
 	background-color: aliceblue;
@@ -37,3 +34,4 @@
 	text-decoration: none;
 	color: black;
 }
+
