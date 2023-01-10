@@ -13,11 +13,12 @@ export async function getStaticProps() {
 		},
 	}
 }
+
 const VelgFag = ({ data }) => {
 	const list = data.result
 	return (
 		<div className={s.container}>
-			<Header text={'Velg fag du vil regne ut'} />
+			<Header>Velg fag du vil regne ut</Header>
 			<ul className={s.list}>
 				{list.map((item) => {
 					return (
