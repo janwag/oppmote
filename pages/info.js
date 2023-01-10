@@ -58,11 +58,8 @@ function info() {
 					Tjenesten er sist oppdatert 04.11.2022.
 					<Link href='/pagelog'>Gå til vår changelog ved å trykke her.</Link> Vilkår er sist oppdatert 04.11.2022.
 				</p>
-				{/* <!-- Jeg kan manuelt legge inn dato her etterhvert som tjenesten oppdateres når den er live --> */}
-				{/* <footer>
-      <!-- Footer og siden skal følge malen fra applikasjonen 
-    </footer> */}
 			</div>
+			<div className={s.filler}></div>
 		</div>
 	)
 }
