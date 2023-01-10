@@ -1,5 +1,5 @@
 import s from '../styles/Header.module.css'
-function Header({ text }) {
-	return <h1 className={s.header}>{text}</h1>
+function Header({ children }) {
+	return <h1 className={s.header}>{children}</h1>
 }
 export default Header
