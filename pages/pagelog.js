@@ -4,11 +4,13 @@ import Link from 'next/link'
 import Header from '../components/Header'
 import Render from '../components/FetchChangeLog'
 
-const pagelog = (data) => {
+const pagelog = () => {
 	return (
 		<div className={s.container}>
 			<Header>Changelog</Header>
-			<Render />
+			<ul>
+				<Render />
+			</ul>
 		</div>
 	)
 }
