@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import s from '../styles/result.module.css'
+import Header from './Header'
 
 const Result = ({ userInput, classesValue }) => {
 	const array = classesValue.map((item) => {
@@ -37,12 +38,13 @@ const Result = ({ userInput, classesValue }) => {
 	}
 
 	const percentCalc = (sum(arr) / arraySum(array)) * 100
+
+	const result = Math.floor(percentCalc)
+
 	return (
 		<div className={s.container}>
 			<div className={s.content}>
-				<h1 className={s.header}>
-					Din oppmøte prosent er <span>{Math.floor(percentCalc)}%</span>
-				</h1>
+				<Header>Din oppmøte prosent er {result}%</Header>
 				<Link href={'/'}>Ny utregning</Link>
 			</div>
 		</div>
