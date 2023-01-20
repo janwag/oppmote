@@ -7,21 +7,44 @@ import { useForm } from 'react-hook-form'
 import ClassNameHeader from '../../components/ClassNameHeader'
 
 export default function ProfilePage({ data }) {
-	console.log(data)
-	const [caluculate, setCalculate] = useState([])
+	const [show, setShow] = useState([])
+
 	const { register, handleSubmit } = useForm()
 	const onSubmit = (data) => {
-		setCalculate(data)
+		setShow(true)
+		console.log(data)
 	}
+	console.log(data.Gruppe1)
 	return (
 		<>
-			{caluculate == false ? (
+			{show == false ? (
 				<form
 					className={s.container}
 					onSubmit={handleSubmit(onSubmit)}>
 					<ClassNameHeader text={data.className} />
 					<div className={s.inputWrapper}>
-						{data.classes?.map((item) => {
+						{data.Gruppe1?.map((item) => {
+							return (
+								<div
+									key={item._key}
+									className={s.inputContainer}>
+									<p>
+										Jeg har deltat på
+										<input
+											min='0'
+											max={item.class}
+											required
+											className={s.input}
+											key={item._id}
+											type='number'
+											{...register(item.name)}
+										/>
+										av {item.class} {item.name}
+									</p>
+								</div>
+							)
+						})}
+						{data.Gruppe2?.map((item) => {
 							return (
 								<div
 									key={item._key}
@@ -51,8 +74,8 @@ export default function ProfilePage({ data }) {
 			) : (
 				<>
 					<Result
-						userInput={caluculate}
-						classesValue={data.classes}
+						classGruppe1={data.Gruppe1}
+						classGruppe2={data.Gruppe2}
 					/>
 				</>
 			)}
@@ -64,7 +87,7 @@ export async function getServerSideProps(context) {
 	const { slug = '' } = context.params
 	const data = await client.fetch(
 		`
-    *[_type == "data" && slug.current == $slug][0]{name, slug, className, code, classes}
+    *[_type == "data" && slug.current == $slug][0]{name, slug, className, code, classes, Gruppe1, Gruppe2}
   `,
 		{ slug }
 	)

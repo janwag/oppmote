@@ -19,8 +19,14 @@ export default {
 			type: 'string',
 		},
 		{
-			name: 'classes',
-			title: 'classses',
+			name: 'Gruppe1',
+			title: 'Gruppe1',
+			type: 'array',
+			of: [{ type: 'classes' }],
+		},
+		{
+			name: 'Gruppe2',
+			title: 'Gruppe2',
 			type: 'array',
 			of: [{ type: 'classes' }],
 		},

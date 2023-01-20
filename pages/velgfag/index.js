@@ -16,6 +16,7 @@ export async function getStaticProps() {
 
 const VelgFag = ({ data }) => {
 	const list = data.result
+	console.log(data)
 	return (
 		<div className={s.container}>
 			<Header>Velg fag du vil regne ut</Header>
