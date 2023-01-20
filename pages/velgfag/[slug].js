@@ -8,13 +8,23 @@ import ClassNameHeader from '../../components/ClassNameHeader'
 
 export default function ProfilePage({ data }) {
 	const [show, setShow] = useState([])
+	const [restClass, setRestClass] = useState([])
+	const [arbeidStorGrupper, setArbeidStorGrupper] = useState([])
 
 	const { register, handleSubmit } = useForm()
 	const onSubmit = (data) => {
+		setArbeidStorGrupper({
+			Arbeidsgrupper: +data.Arbeidsgrupper,
+			Storgrupper: +data.Storgrupper,
+		})
+		setRestClass({
+			Oppgaver: +data.Oppgaver,
+			Kommenteringer: +data.Kommenteringer,
+			Seminar: +data.Seminar,
+		})
+
 		setShow(true)
-		console.log(data)
 	}
-	console.log(data.Gruppe1)
 	return (
 		<>
 			{show == false ? (
@@ -76,6 +86,8 @@ export default function ProfilePage({ data }) {
 					<Result
 						classGruppe1={data.Gruppe1}
 						classGruppe2={data.Gruppe2}
+						userInputArbeidStorgrupper={arbeidStorGrupper}
+						userInputRest={restClass}
 					/>
 				</>
 			)}
