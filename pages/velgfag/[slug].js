@@ -2,16 +2,27 @@ import s from '../../styles/slug.module.css'
 import groq from 'groq'
 import client from '../../client'
 import { useState } from 'react'
-import Result from '../../components/resultPage'
+import Result, { Test } from '../../components/resultPage'
 import { useForm } from 'react-hook-form'
 import ClassNameHeader from '../../components/ClassNameHeader'
+import { loadGetInitialProps } from 'next/dist/shared/lib/utils'
 
-export default function ProfilePage({ data }) {
-	const [show, setShow] = useState([])
-	const [restClass, setRestClass] = useState([])
-	const [arbeidStorGrupper, setArbeidStorGrupper] = useState([])
+export default function ProfilePage({ cmsdata }) {
+	// const test = cmsdata.Gruppe1.map((item) => {
+
+	// 	return Object.call(item.class)
+	// })
+	// console.log(test)
+	console.log(cmsdata.Gruppe1)
+	const res = Object.defineProperty(cmsdata.Gruppe1, [0], cmsdata)
+	console.log(res)
+
+	const [show, setShow] = useState(false)
+	const [restClass, setRestClass] = useState()
+	const [arbeidStorGrupper, setArbeidStorGrupper] = useState()
 
 	const { register, handleSubmit } = useForm()
+
 	const onSubmit = (data) => {
 		setArbeidStorGrupper({
 			Arbeidsgrupper: +data.Arbeidsgrupper,
@@ -31,9 +42,9 @@ export default function ProfilePage({ data }) {
 				<form
 					className={s.container}
 					onSubmit={handleSubmit(onSubmit)}>
-					<ClassNameHeader text={data.className} />
+					<ClassNameHeader text={cmsdata.className} />
 					<div className={s.inputWrapper}>
-						{data.Gruppe1?.map((item) => {
+						{cmsdata.Gruppe1?.map((item) => {
 							return (
 								<div
 									key={item._key}
@@ -54,7 +65,7 @@ export default function ProfilePage({ data }) {
 								</div>
 							)
 						})}
-						{data.Gruppe2?.map((item) => {
+						{cmsdata.Gruppe2?.map((item) => {
 							return (
 								<div
 									key={item._key}
@@ -82,14 +93,10 @@ export default function ProfilePage({ data }) {
 					/>
 				</form>
 			) : (
-				<>
-					<Result
-						classGruppe1={data.Gruppe1}
-						classGruppe2={data.Gruppe2}
-						userInputArbeidStorgrupper={arbeidStorGrupper}
-						userInputRest={restClass}
-					/>
-				</>
+				<Result
+					userInputGroupe1={arbeidStorGrupper}
+					cmsDataG1={cmsdata.Gruppe1}
+				/>
 			)}
 		</>
 	)
@@ -97,7 +104,7 @@ export default function ProfilePage({ data }) {
 
 export async function getServerSideProps(context) {
 	const { slug = '' } = context.params
-	const data = await client.fetch(
+	const cmsdata = await client.fetch(
 		`
     *[_type == "data" && slug.current == $slug][0]{name, slug, className, code, classes, Gruppe1, Gruppe2}
   `,
@@ -105,7 +112,7 @@ export async function getServerSideProps(context) {
 	)
 	return {
 		props: {
-			data,
+			cmsdata,
 		},
 	}
 }
