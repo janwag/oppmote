@@ -8,15 +8,6 @@ import ClassNameHeader from '../../components/ClassNameHeader'
 import { loadGetInitialProps } from 'next/dist/shared/lib/utils'
 
 export default function ProfilePage({ cmsdata }) {
-	// const test = cmsdata.Gruppe1.map((item) => {
-
-	// 	return Object.call(item.class)
-	// })
-	// console.log(test)
-	console.log(cmsdata.Gruppe1)
-	const res = Object.defineProperty(cmsdata.Gruppe1, [0], cmsdata)
-	console.log(res)
-
 	const [show, setShow] = useState(false)
 	const [restClass, setRestClass] = useState()
 	const [arbeidStorGrupper, setArbeidStorGrupper] = useState()
@@ -94,8 +85,10 @@ export default function ProfilePage({ cmsdata }) {
 				</form>
 			) : (
 				<Result
+					userInputGroupe2={restClass}
 					userInputGroupe1={arbeidStorGrupper}
 					cmsDataG1={cmsdata.Gruppe1}
+					cmsDataG2={cmsdata.Gruppe2}
 				/>
 			)}
 		</>
