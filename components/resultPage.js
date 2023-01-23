@@ -1,39 +1,36 @@
 import Link from 'next/link'
 import s from '../styles/result.module.css'
+import Gruppe1calc from './Gruppe1calc'
+import Gruppe2calc from './Gruppe2calc'
 import Header from './Header'
 
 export default function Result({ cmsDataG1, userInputGroupe1, cmsDataG2, userInputGroupe2 }) {
-	const Seminar = userInputGroupe2.Seminar || 0 * 100/ 
-	const Kommentering = userInputGroupe2.Kommenteringer || 0
-	const Oppgaver = userInputGroupe2.Oppgaver || 0
+	const gruppe1 = Gruppe1calc(cmsDataG1, userInputGroupe1)
+	const gruppe2 = Gruppe2calc(cmsDataG2, userInputGroupe2)
 
-	const cmsDataGruppe2 = cmsDataG2.map((item) => {
+	const cmsg1 = cmsDataG1.map((item) => {
 		return item.class
 	})
-	const userSumGruppe2 = Seminar + Kommentering + Oppgaver
-	const cmsSumGruppe2 = cmsDataGruppe2.map((i) => i).reduce((prev, curr) => prev + curr, 0)
-	const totalUserSumGruppe2 = (userSumGruppe2 / cmsSumGruppe2) * 100
-	/* --------------------------------- gruppe1 -------------------------------- */
-	const arbeidsgrupper = userInputGroupe1.Arbeidsgrupper || 0
-	const storgrupper = userInputGroupe1.Storgrupper || 0
-	const seminar = userInputGroupe1.Seminar || 0
-
-	const userSumGruppe1 = arbeidsgrupper + storgrupper + seminar
-
-	const cmsDataGruppe1 = cmsDataG1.map((item) => {
+	const cmsg2 = cmsDataG2.map((item) => {
 		return item.class
 	})
-	const cmsSumGruppe1 = cmsDataGruppe1.map((i) => i).reduce((prev, curr) => prev + curr, 0)
-	const totalUserSumGruppe1 = (userSumGruppe1 / cmsSumGruppe1) * 100
-	console.log(totalUserSumGruppe1)
+	const cmsSum = cmsg1.length + cmsg2.length
+	console.log('cmsSum', cmsSum)
+	console.log('gruppe1', gruppe1)
+	const g2Length = gruppe2.length
+	const gruppe2Calc = gruppe2.map((item) => {
+		return item / g2Length
+	})
 
-	/* ------------------------------------------------------------------------- */
-	const finalUserOutput = totalUserSumGruppe1 + totalUserSumGruppe2
-	const finalCmsOutput = cmsSumGruppe1 + cmsSumGruppe2
-	const output = (finalUserOutput / finalCmsOutput) * 100
+	const res = gruppe2Calc.reduce((a, b) => {
+		return a + b
+	})
+
+	const finalSum = res + gruppe1 / cmsSum
+	console.log(finalSum)
 	return (
 		<div className={s.container}>
-			{output}
+			{gruppe1 + gruppe2Calc / cmsSum}
 			{/* <div className={s.content}>
 				<Header>Din oppmøte prosent er {result}%</Header>
 				<Link href={'/'}>Ny utregning</Link>
