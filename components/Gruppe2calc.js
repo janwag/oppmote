@@ -18,6 +18,5 @@ export default function Gruppe2calc(cmsDataG2, userInputGroupe2) {
 		}
 	})
 	const added = arr.reduce((a, b) => a + b)
-	const finalSum = added / arr.length
-	return finalSum
+	return { added, arr }
 }
