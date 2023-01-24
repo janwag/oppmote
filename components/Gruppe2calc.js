@@ -9,7 +9,7 @@ export default function Gruppe2calc(cmsDataG2, userInputGroupe2) {
 
 	const oppgaverCalc = (oppgaver * 100) / cmsData.Oppgaver
 	const kommenteringerCalc = (kommenteringer * 100) / cmsData.Kommenteringer
-	const seminarCalc = (seminar / cmsData.seminar) * 100
+	const seminarCalc = (seminar * 100) / cmsData.seminar
 	const obj = [oppgaverCalc, kommenteringerCalc, seminarCalc]
 	let arr = []
 	obj.map((item) => {
@@ -17,6 +17,7 @@ export default function Gruppe2calc(cmsDataG2, userInputGroupe2) {
 			arr.push(item)
 		}
 	})
-	const gruppe2Obj = arr
-	return gruppe2Obj
+	const added = arr.reduce((a, b) => a + b)
+	const finalSum = added / arr.length
+	return finalSum
 }
