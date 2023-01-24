@@ -7,7 +7,6 @@ export default function Gruppe1calc(cmsDataG1, userInputGroupe1) {
 	const storgrupper = userInputGroupe1?.Storgrupper || 0
 
 	const userInputSum = arbeidsgrupper + storgrupper
-	console.log(userInputGroupe1)
 	const grupperProsent = (userInputSum / arbeidsgrupperStorgrupperSum) * 100
 	const gruppe1Arr = [1]
 	return { grupperProsent, gruppe1Arr }

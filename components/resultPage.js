@@ -8,7 +8,6 @@ export default function Result({ cmsDataG1, userInputGroupe1, cmsDataG2, userInp
 	const gruppe1 = Gruppe1calc(cmsDataG1, userInputGroupe1)
 	const gruppe2 = Gruppe2calc(cmsDataG2, userInputGroupe2)
 	const nummberOfArr = gruppe1.gruppe1Arr.length + gruppe2.arr.length
-	console.log(nummberOfArr)
 	const finalSum = Math.floor(gruppe1.grupperProsent + gruppe2.added) / nummberOfArr
 	return (
 		<div className={s.container}>
