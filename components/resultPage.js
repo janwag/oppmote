@@ -13,7 +13,18 @@ export default function Result({ cmsDataG1, userInputGroupe1, cmsDataG2, userInp
 		<div className={s.container}>
 			<div className={s.content}>
 				<Header>Din oppmøte prosent er {finalSum}%</Header>
-				<Link href={'/'}>Ny utregning</Link>
+				<button
+					onClick={() => {
+						window.history.go('/pages/velgfag/[slug]')
+					}}>
+					Tilbake
+				</button>
+				<button
+					onClick={() => {
+						window.history.back()
+					}}>
+					Ny utregning
+				</button>
 			</div>
 		</div>
 	)

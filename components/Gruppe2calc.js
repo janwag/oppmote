@@ -3,9 +3,9 @@ export default function Gruppe2calc(cmsDataG2, userInputGroupe2) {
 	cmsDataG2.map((item) => {
 		return (cmsData[item.name] = item.class)
 	})
-	const seminar = userInputGroupe2.Seminar || 0
-	const oppgaver = userInputGroupe2.Oppgaver || 0
-	const kommenteringer = userInputGroupe2.Kommenteringer || 0
+	const seminar = userInputGroupe2?.Seminar
+	const oppgaver = userInputGroupe2?.Oppgaver
+	const kommenteringer = userInputGroupe2?.Kommenteringer
 
 	const oppgaverCalc = (oppgaver * 100) / cmsData.Oppgaver
 	const kommenteringerCalc = (kommenteringer * 100) / cmsData.Kommenteringer
@@ -17,6 +17,6 @@ export default function Gruppe2calc(cmsDataG2, userInputGroupe2) {
 			arr.push(item)
 		}
 	})
-	const added = arr.reduce((a, b) => a + b)
+	const added = arr.length > 0 ? arr.reduce((a, b) => a + b) : 0
 	return { added, arr }
 }
