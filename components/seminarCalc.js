@@ -1,8 +1,8 @@
 import Header from './Header'
 import s from '../styles/result.module.css'
 
-export default function SemiarCalc({ userInputGroupe2, cmsDataG2 }) {
-	const seminar = cmsDataG2[0].class
+export default function SemiarCalc({ userInputGroupe2, cmsData }) {
+	const seminar = cmsData[0].class
 	const userData = userInputGroupe2.Seminar
 	const finalSum = (userData / seminar) * 100
 	return (

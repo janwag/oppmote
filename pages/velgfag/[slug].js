@@ -97,12 +97,12 @@ export default function ProfilePage({ cmsdata }) {
 		)
 	} else {
 		const [seminar, setSeminar] = useState(false)
-		const [restClass, setRestClass] = useState()
+		const [rest, setRest] = useState()
 
 		const { register, handleSubmit } = useForm()
 
 		const onSubmit = (data) => {
-			setRestClass({
+			setRest({
 				Seminar: +data.Seminar,
 			})
 
@@ -145,8 +145,8 @@ export default function ProfilePage({ cmsdata }) {
 					</form>
 				) : (
 					<SeminarCalc
-						userInputGroupe2={restClass}
-						cmsDataG2={cmsdata.Gruppe2}
+						userInputGroupe2={rest}
+						cmsData={cmsdata.Gruppe2}
 					/>
 				)}
 			</>
