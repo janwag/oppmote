@@ -3,7 +3,7 @@ import s from '../styles/result.module.css'
 
 export default function SemiarCalc({ userInputGroupe2, cmsData }) {
 	const seminar = cmsData[0].class
-	const userData = userInputGroupe2.Seminar
+	const userData = userInputGroupe2.User
 	const finalSum = (userData / seminar) * 100
 	return (
 		<div className={s.container}>

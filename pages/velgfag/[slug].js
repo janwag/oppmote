@@ -103,7 +103,7 @@ export default function ProfilePage({ cmsdata }) {
 
 		const onSubmit = (data) => {
 			setRest({
-				Seminar: +data.Seminar,
+				User: +data.Seminar,
 			})
 
 			setSeminar(true)
