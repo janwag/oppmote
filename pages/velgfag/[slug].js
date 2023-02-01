@@ -14,10 +14,9 @@ export default function ProfilePage({ dataFromCms }) {
 	} else {
 		return <SemiarCalc cmsdata={dataFromCms} />
 	}
-	//  ? <h1>test</h1> : />
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 	const { slug = '' } = context.params
 	const dataFromCms = await client.fetch(
 		`
