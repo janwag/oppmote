@@ -1,11 +1,11 @@
 export default {
 	name: 'classes',
 	title: 'Classes',
-	type: 'document',
+	type: 'object',
 	fields: [
 		{
 			name: 'name',
-			title: 'Name',
+			title: 'Navn',
 			type: 'string',
 		},
 		{
