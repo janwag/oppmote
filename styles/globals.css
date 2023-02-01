@@ -22,4 +22,24 @@ body,
 	flex-direction: column;
 	height: 100%;
 	width: 100%;
+	/* width */
+}
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: rgba(20, 20, 20, 0.523);
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(20, 20, 20, 0.7);
 }
