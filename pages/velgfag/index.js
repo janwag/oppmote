@@ -3,7 +3,7 @@ import s from '../../styles/VelgFag.module.css'
 import groq from 'groq'
 import Header from '../../components/Header'
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const url = 'https://qmgpu00g.api.sanity.io/v1/data/query/production?query='
 	const data = await fetch(url + groq`*[_type=="data"]`).then((data) => data.json())
 
