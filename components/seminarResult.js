@@ -11,12 +11,14 @@ const SeminarResult = ({ dataFromCms, userInputGroupe2 }) => {
 			<div className={s.content}>
 				<Header>Din oppmøte prosent er {finalSum}%</Header>
 				<button
+					className={s.button}
 					onClick={() => {
 						window.history.go('/pages/velgfag/[slug]')
 					}}>
 					Tilbake
 				</button>
 				<button
+					className={s.button}
 					onClick={() => {
 						window.history.back()
 					}}>
