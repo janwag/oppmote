@@ -1,6 +1,6 @@
 export default function Gruppe2calc(cmsDataG2, userInputGroupe2) {
 	let cmsData = {}
-	cmsDataG2.map((item) => {
+	cmsDataG2?.map((item) => {
 		return (cmsData[item.name] = item.class)
 	})
 	const seminar = userInputGroupe2?.Seminar
