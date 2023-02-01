@@ -16,6 +16,23 @@ export default function ProfilePage({ dataFromCms }) {
 	}
 }
 
+export async function getStaticPaths() {
+	const respon = await client.fetch(groq`*[_type == 'data']`)
+	// export async function getStaticPaths() {
+	// 	const respon = await client.fetch(groq`*[_type == 'data']`)
+
+	const paths = respon.map((item) => {
+		return {
+			params: { slug: item.slug.current },
+		}
+	})
+
+	return {
+		paths,
+		fallback: false,
+	}
+}
+
 export async function getStaticProps(context) {
 	const { slug = '' } = context.params
 	const dataFromCms = await client.fetch(
