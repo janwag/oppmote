@@ -37,3 +37,17 @@
 	padding-top: 4rem;
 	margin-bottom: auto;
 }
+
+.button {
+	background-color: aliceblue;
+	width: 20rem;
+	border-radius: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem 0;
+	text-decoration: none;
+	color: black;
+	border: none;
+	font-size: 1.3rem;
+}
