@@ -1,66 +1,79 @@
+import groq from 'groq'
 import Link from 'next/link'
 import s from '../styles/info.module.css'
-function info() {
+import InfoHeader from '../components/infoHeader'
+
+export default function Info({ data }) {
+	const about = data.result[0].about.map((item) => {
+		const aboutText = item.children.text
+		return aboutText
+	})
+	const whoMadeIt = data.result[0].whoMadeIt.map((item) => {
+		const whoMadeItText = item.children.text
+		return whoMadeItText
+	})
+	const userAgreement = data.result[0].userAgreement.map((item) => {
+		const userAgreementText = item.children.text
+		return userAgreementText
+	})
+	const lastUpdate = data.result[0].lastUpdate
+	console.log(lastUpdate)
+
 	return (
 		<div className={s.container}>
 			<h1>Viktig informasjon om applikasjonen</h1>
-			<h2>Innhold</h2>
-			<ul>
+			<ul className={s.list}>
 				<li>
-					<a href='#om'>Om tjenesten</a>
+					<Link href={'#section_1'}>Om tjenesten</Link>
 				</li>
 				<li>
-					<a href='#hvem'>Hvem står bak</a>
+					<Link href={'#section_2'}>Hvem står bak</Link>
 				</li>
 				<li>
-					<a href='#vilkar'>Vilkår og ansvarsfraskrivelse</a>
+					<Link href={'#section_3'}>Vilkår og ansvarsfraskrivelse</Link>
 				</li>
 			</ul>
-			<div className={s.list}>
-				<h2 id='om'>Om tjenesten</h2>
-				<p>
-					Applikasjonen {`"Oppmøteprosent"`} er en tjeneste som lar deg regne ut din prosent av obligatorisk oppmøte på studiet. Formålet er at du på en enkel og effektiv måte skal kunne skrive inn
-					hva du har deltatt på. Deretter vil du få vite hvilken prosent du havner på, og om du følgelig er innenfor eller utenfor det obligatoriske kravet om 75% deltakelse.
-				</p>
-				<p>
-					I applikasjonen er det lagt inn enkelte forhåndsdefinerte fag. Dette gjør det enda lettere å regne ut sin prosent, da man slipper å søke opp hva som kreves av de ulike aktivitetene. Alt i
-					alt en mye enklere måte å finne ut hvordan man ligger an. Dersom du ikke finner ditt fag i listen, er det også en manuell side. Den manuelle siden lar deg legge inn både ditt oppmøte, i
-					tillegg til det obligatoriske oppmøtet i det emnet. Det jobbes kontinuerlig med å få lagt inn flere fag, og å kunne ekspandere til andre studiesteder og emner.
-				</p>
-				<h2 id='hvem'>Hvem står bak tjenesten</h2>
-				Det er aksjeselskapet Foks AS som står som juridisk eier av tjenesten. Juridisk navn: Foks AS Organisasjonsnummer:
-				<a href='https://w2.reg.no/enhet/sok/detalj.jsp?orgnr=923302727'>923 302 727</a>
-				Epost-adresse: <a href='mailto:post@foks.no?subject=Mail fra Oppømteprosent'>post@foks.no</a>
-				<p>
-					Telefonnummer: <a href='tel:+4753215353'>53 21 53 53</a>
-				</p>
-				<p>
-					Tjenesten er utviklet og finansiert av Foks AS etter idé og ønske fra daglig leder i aksjeselskapet. Daglig leder er{' '}
-					<a href='https://www.linkedin.com/in/jan-martin-wåge/'>Jan Martin Wåge</a>. Tjenesten er på ingen måte assosiert med Universitetet i Bergen eller andre aktører, og er ene og alene en
-					tjeneste fra Foks AS.
-				</p>
-				<p>
-					Jan Martin Wåge er selv student på tredje studieår ved Det juridiske fakultet ved Universitetet i Bergen. Etter flere år hvor man måtte forholde seg til{' "utfordrende"'} formler på
-					fakultetets nettsider når det kom til oppmøteberegning, kom ideen om å lage dette til et digitalt system. Her holder systemet kontroll på hva som er maksimum deltakelse, og regner ut en
-					prosent basert på input fra din deltakelse. Dette er et mye bedre system, og man slipper egne kalkulatorer og excel-ark som kan skape krøll i utregningen.
-				</p>
-				<h2 id='vilkar'>Vilkår og ansvarsfraskrivelse</h2>
-				<p>
-					Foks AS som juridisk eier og utvikler fraskriver seg alt ansvar i forbindelse med uk av tjenesten. All uk skjer på eget ansvar, og det tas forbehold om feil. Det kan forekomme feil i
-					utregningen, eller at et feil antall obligatoriske aktiviteter er lagt inn i fagene, og så videre. Foks AS tilstreber likevel at tjenesten skal være feilfri, men ukere må ha forståelse for
-					at ting kan gå galt. Ansvar for feil kan ikke tillegges Foks AS eller dets samarbeidspartnere.
-				</p>
-				<p>
-					Foks AS og applikasjonen tilstreber å ta vare på ditt personvern. Tjenesten lagrer ikke dine input, og dine input blir kun ukt til å regne ut din obligatoriske oppmøteprosent. Det kan bli
-					ukt cookies/informasjonskapsler for å føre statistikk over uk. Tjenesten hostes hos Domeneshop, og uker deres tjeneste for besøksstatistikk.
-				</p>
-				<p>
-					Tjenesten er sist oppdatert 04.11.2022.
-					<Link href='/pagelog'>Gå til vår changelog ved å trykke her.</Link> Vilkår er sist oppdatert 04.11.2022.
-				</p>
+			<div
+				id='section_1'
+				className={s.section_1}>
+				<InfoHeader header={'Om tjenesten'} />
+				{about}
 			</div>
-			<div className={s.filler}></div>
+			<div
+				id='section_2'
+				className={s.section_2}>
+				<InfoHeader header={'Hvem står bak tjenesten'} />
+				{whoMadeIt}
+			</div>
+			<div
+				id='section_3'
+				className={s.section_3}>
+				<InfoHeader header={'Vilkår og ansvarsfraskrivelse'} />
+				{userAgreement}
+			</div>
+			{lastUpdate[0].children.text}
+			<Link href={'/pagelog'}>
+				<p>{lastUpdate[1].children.text}</p>
+			</Link>
 		</div>
 	)
 }
-export default info
+
+export async function getServerSideProps() {
+	const url = 'https://qmgpu00g.api.sanity.io/v1/data/query/production?query='
+	const data = await fetch(
+		url +
+			groq` *[_type == 'info']{
+  about[]{children[0]{text}},
+  whoMadeIt[]{children[0]{text}},
+userAgreement[]{children[0]{text}},
+lastUpdate[]{children[0]{text}}
+}`
+	).then((data) => data.json())
+
+	return {
+		props: {
+			data,
+		},
+	}
+}
