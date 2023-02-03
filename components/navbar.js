@@ -9,8 +9,8 @@ const Navbar = () => {
 				<div className={styles.logo}>
 					<Image
 						src={logo}
-						width={1230}
-						height={1143}
+						width={35}
+						height={35}
 						alt={'test'}
 					/>
 				</div>
