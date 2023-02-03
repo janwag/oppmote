@@ -1,18 +1,33 @@
 .footer {
 	background: rgb(7, 7, 7);
-	padding: 1rem 0;
+	padding: 0.9rem 0;
 	max-width: 100%;
 	display: flex;
-	justify-content: space-around;
+	flex-direction: column;
+	gap: 0.8rem;
 }
 .text {
-	color: white;
 	display: flex;
-	height: 100%;
+	justify-content: space-evenly;
+	align-items: center;
+	/* gap: 1rem; */
+	font-size: smaller;
+	max-height: 100%;
+	width: 100%;
+	color: white;
 	font-weight: 700;
 }
-
-.footer a:any-link {
-	text-decoration: none;
+.credit {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	/* gap: 1rem; */
+	font-size: smaller;
+	max-height: 100%;
+	width: 100%;
 	color: white;
 }
+
+/* .text p ::after {
+	color: white;
+} */
