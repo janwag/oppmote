@@ -6,17 +6,42 @@ export default {
 		{
 			title: 'Om tjenesten',
 			name: 'about',
-			type: 'text',
+			type: 'array',
+			of: [
+				{
+					type: 'block',
+				},
+			],
 		},
 		{
 			title: 'Hem står bak tjenesten',
 			name: 'whoMadeIt',
-			type: 'text',
+			type: 'array',
+			of: [
+				{
+					type: 'block',
+				},
+			],
 		},
 		{
 			title: 'Vilkår og ansvarsfraskrivelse',
-			name: 'userAgreenment',
-			type: 'text',
+			name: 'userAgreement',
+			type: 'array',
+			of: [
+				{
+					type: 'block',
+				},
+			],
+		},
+		{
+			title: 'Sist oppdatert',
+			name: 'lastUpdate',
+			type: 'array',
+			of: [
+				{
+					type: 'block',
+				},
+			],
 		},
 	],
 }
