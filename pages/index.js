@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Header from '../components/Header'
 import s from '../styles/Home.module.css'
-import figure from '../assets/figure1-removebg-preview.png'
 function Home() {
 	return (
 		<div className={s.container}>
