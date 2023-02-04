@@ -7,11 +7,6 @@ function Home() {
 		<>
 			<Head>
 				<meta
-					name='viewport'
-					content='width=device-width, initial-scale=1.0'
-				/>
-
-				<meta
 					name='apple-mobile-web-app-capable'
 					content='yes'
 				/>
@@ -26,6 +21,14 @@ function Home() {
 				<meta
 					name='apple-mobile-web-app-orientations'
 					content='portrait-any'
+				/>
+				<meta
+					name='viewport'
+					content='target-densitydpi=device-dpi, width=device-width, user-scalable=no, maximum-scale=1, minimum-scale=1'
+				/>
+				<meta
+					name='viewport'
+					content='user-scalable=no,initial-scale=1.0,maximum-scale=1.0'
 				/>
 			</Head>
 
