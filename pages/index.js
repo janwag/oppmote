@@ -23,7 +23,9 @@ function Home() {
 					<div className={s.link}>
 						<Link href='/velgfag'>Velg Fag</Link>
 					</div>
-					<div className={s.figure} />
+					<div className={s.figureContainer}>
+						<div className={s.figure} />
+					</div>
 				</div>
 			</div>
 		</>

@@ -12,18 +12,20 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-evenly;
 	gap: 7rem;
+	height: 100%;
 }
 
-.figure {
-	height: 20rem;
+.figureContainer {
+	margin-top: auto;
+	height: auto;
 	width: 100%;
+}
+.figure {
+	width: 12rem;
+	height: 17rem;
 	background-image: url(../assets/picwish.png);
-	margin-right: 0.2rem;
-	margin-bottom: -2rem;
-	background-position: left;
-	background-size: contain;
+	background-size: cover;
 	background-repeat: no-repeat;
 }
 
