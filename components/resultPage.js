@@ -12,21 +12,6 @@ export default function Result({ cmsDataG1, userInputGroupe1, cmsDataG2, userInp
 	const finalSum = (gruppe1.grupperProsent + gruppe2.added) / nummberOfArr
 	return (
 		<>
-			<Head>
-				<meta
-					name='viewport'
-					content='width=device-width, initial-scale=1.0'
-				/>
-				<meta
-					property='og:title'
-					content='My page title'
-					key='title'
-				/>
-				<meta
-					name='apple-mobile-web-app-capable'
-					content='yes'
-				/>
-			</Head>
 			<div className={s.container}>
 				<div className={s.content}>
 					<Header>Din oppmøte prosent er {finalSum.toPrecision(4)}%</Header>
