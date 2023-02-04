@@ -15,6 +15,10 @@ function Home() {
 					content='My page title'
 					key='title'
 				/>
+				<meta
+					name='apple-mobile-web-app-capable'
+					content='yes'
+				/>
 			</Head>
 
 			<div className={s.container}>
