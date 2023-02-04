@@ -13,12 +13,16 @@
 html,
 body,
 #__next {
-	height: 100vh;
+	height: 100%;
 	margin: 0;
 	padding: 0;
 	width: 100%;
 	display: flex;
-	flex: 1;
+	flex: 1 1;
 	flex-direction: column;
-	/* width */
+}
+html,
+body,
+#__next {
+	max-height: 100%;
 }
