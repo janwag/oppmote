@@ -4,7 +4,7 @@ import { deskTool } from 'sanity/desk'
 import schema from './schemas/schema'
 
 export default defineConfig({
-	title: 'ClassList',
+	title: 'classList',
 	projectId: 'qmgpu00g',
 	dataset: 'production',
 	plugins: [deskTool(), visionTool()],

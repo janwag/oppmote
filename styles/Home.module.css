@@ -2,7 +2,7 @@
 	max-width: 100%;
 	min-height: 86vh;
 	height: 100%;
-	background-image: url(../assets/BG.svg);
+	background-image: url(../assets/Vector.png);
 	background-position: center;
 	background-size: contain;
 	background-size: cover;
@@ -15,6 +15,17 @@
 	align-items: center;
 	justify-content: space-evenly;
 	gap: 7rem;
+}
+
+.figure {
+	height: 20rem;
+	width: 100%;
+	background-image: url(../assets/figure1-removebg-preview.png);
+	margin-right: 0.2rem;
+	margin-bottom: -2rem;
+	background-position: left;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .link :any-link {

@@ -28,6 +28,7 @@ export default function Result({ cmsDataG1, userInputGroupe1, cmsDataG2, userInp
 					Ny utregning
 				</button>
 			</div>
+			<div className={s.figure} />
 		</div>
 	)
 }
