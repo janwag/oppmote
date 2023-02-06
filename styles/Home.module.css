@@ -12,12 +12,11 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 7rem;
+	justify-content: space-between;
 	height: 100%;
 }
 
 .figureContainer {
-	margin-top: auto;
 	height: auto;
 	width: 100%;
 }
