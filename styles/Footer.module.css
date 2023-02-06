@@ -1,5 +1,5 @@
 .footer {
-	background: rgb(7, 7, 7);
+	background: #3c3c3c;
 	max-width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -17,7 +17,7 @@
 	color: white;
 	font-weight: 700;
 }
-.link  {
+.link {
 	color: white;
 }
 .credit {
