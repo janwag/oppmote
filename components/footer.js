@@ -10,12 +10,8 @@ export default function Footer() {
 				</p>
 			</div>
 			<div className={s.credit}>
-				<p>
-					Utvikler: <br /> Sander Tonheim
-				</p>
-				<p>
-					Teknsik bistand: <br /> Ole Håvard Furuseth Bergan
-				</p>
+				<p>Utvikler // Teknsik bistand:</p>
+				<p>Sander Tonheim // Ole Håvard Furuseth Bergan</p>
 			</div>
 		</div>
 	)
