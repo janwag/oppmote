@@ -14,13 +14,13 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 2rem;
-	margin: auto 0;
 	max-width: 100%;
 	min-height: 10vh;
-	max-height: 50vh;
+	max-height: 100%;
 	overflow: hidden;
 	overflow-y: auto;
 	list-style-type: none;
+	margin: 1rem;
 }
 
 .list li :-webkit-any-link {
