@@ -17,6 +17,9 @@
 	color: white;
 	font-weight: 700;
 }
+.link  {
+	color: white;
+}
 .credit {
 	display: flex;
 	justify-content: space-evenly;

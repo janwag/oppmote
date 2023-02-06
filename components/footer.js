@@ -5,9 +5,11 @@ export default function Footer() {
 		<div className={s.footer}>
 			<div className={s.text}>
 				<p>© Foks AS 2023</p>
-				<p>
-					Viktig info om tjenesten <Link href={'/info'}>her.</Link>
-				</p>
+				<Link
+					className={s.link}
+					href={'/info'}>
+					Viktig info om tjenesten her.
+				</Link>
 			</div>
 			<div className={s.credit}>
 				<p>Utvikler // Teknsik bistand:</p>
