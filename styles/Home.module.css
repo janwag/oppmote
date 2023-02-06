@@ -29,6 +29,38 @@
 	background-repeat: no-repeat;
 }
 
+.link :-webkit-any-link {
+	height: 4rem;
+	width: 20rem;
+	background-color: white;
+
+	border: none;
+	border-radius: 1rem;
+	font-size: 1.6rem;
+	font-weight: 500;
+	text-decoration: none;
+	color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.link :-moz-any-link {
+	height: 4rem;
+	width: 20rem;
+	background-color: white;
+
+	border: none;
+	border-radius: 1rem;
+	font-size: 1.6rem;
+	font-weight: 500;
+	text-decoration: none;
+	color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .link :any-link {
 	height: 4rem;
 	width: 20rem;

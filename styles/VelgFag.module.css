@@ -22,6 +22,30 @@
 	list-style-type: none;
 }
 
+.list li :-webkit-any-link {
+	background-color: aliceblue;
+	width: 20rem;
+	border-radius: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem 0;
+	text-decoration: none;
+	color: black;
+}
+
+.list li :-moz-any-link {
+	background-color: aliceblue;
+	width: 20rem;
+	border-radius: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem 0;
+	text-decoration: none;
+	color: black;
+}
+
 .list li :any-link {
 	background-color: aliceblue;
 	width: 20rem;
