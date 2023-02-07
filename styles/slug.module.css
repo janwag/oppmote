@@ -3,30 +3,23 @@
 	flex-direction: column;
 	align-items: center;
 	height: 100%;
-	background-image: url('../assets/BG site 3.svg');
-	background-position: 0rem;
+	max-width: 100%;
+	background-image: url('../assets/backgroundSite2.svg');
+	background-position: 0vh;
 	background-size: cover;
 	background-repeat: no-repeat;
-}
-
-.fields {
-	max-width: 100%;
-	max-height: 100%;
-	display: flex;
-	flex-direction: column;
-}
-
-.container h2 {
-	text-decoration: underline;
-	display: flex;
-	justify-content: center;
-	text-underline-offset: 1rem;
 }
 
 .inputContainer {
 	display: flex;
 	max-width: 100%;
-	gap: 1rem;
+}
+
+.fields {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-between;
 }
 
 .input {
@@ -39,7 +32,10 @@
 .inputWrapper {
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	justify-content: space-between;
+	height: 240px;
+	max-height: 20rem;
+	flex: 1;
 }
 
 .button {
@@ -50,10 +46,19 @@
 	align-items: center;
 	justify-content: center;
 	padding: 1rem 0;
-	margin: 2rem 0;
-
 	text-decoration: none;
 	color: black;
 	border: none;
 	font-size: 1.3rem;
+}
+
+.figureContainer {
+	height: 100%;
+	max-height: 13.9rem;
+	width: 100%;
+	margin-top: auto;
+	background-image: url(../assets/figure2.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top;
 }

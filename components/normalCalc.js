@@ -27,59 +27,64 @@ export default function NormalCalc({ cmsdata }) {
 	return (
 		<>
 			{show == false ? (
-				<form
-					className={s.container}
-					onSubmit={handleSubmit(onSubmit)}>
+				<div className={s.container}>
 					<ClassNameHeader text={cmsdata.className} />
-					<div className={s.inputWrapper}>
-						{cmsdata.Gruppe1?.map((item) => {
-							return (
-								<div
-									key={item._key}
-									className={s.inputContainer}>
-									<p>
-										Jeg har deltat på
-										<input
-											min='0'
-											max={item.class}
-											required
-											className={s.input}
-											key={item._id}
-											type='number'
-											{...register(item.name)}
-										/>
-										av {item.class} {item.name}
-									</p>
-								</div>
-							)
-						})}
-						{cmsdata.Gruppe2?.map((item) => {
-							return (
-								<div
-									key={item._key}
-									className={s.inputContainer}>
-									<p>
-										Jeg har deltat på
-										<input
-											min='0'
-											max={item.class}
-											required
-											className={s.input}
-											key={item._id}
-											type='number'
-											{...register(item.name)}
-										/>
-										av {item.class} {item.name}
-									</p>
-								</div>
-							)
-						})}
+					<form
+						className={s.fields}
+						onSubmit={handleSubmit(onSubmit)}>
+						<div className={s.inputWrapper}>
+							{cmsdata.Gruppe1?.map((item) => {
+								return (
+									<div
+										key={item._key}
+										className={s.inputContainer}>
+										<p>
+											Jeg har deltat på
+											<input
+												min='0'
+												max={item.class}
+												required
+												className={s.input}
+												key={item._id}
+												type='number'
+												{...register(item.name)}
+											/>
+											av {item.class} {item.name}
+										</p>
+									</div>
+								)
+							})}
+							{cmsdata.Gruppe2?.map((item) => {
+								return (
+									<div
+										key={item._key}
+										className={s.inputContainer}>
+										<p>
+											Jeg har deltat på
+											<input
+												min='0'
+												max={item.class}
+												required
+												className={s.input}
+												key={item._id}
+												type='number'
+												{...register(item.name)}
+											/>
+											av {item.class} {item.name}
+										</p>
+									</div>
+								)
+							})}
+							<input
+								className={s.button}
+								type='submit'
+							/>
+						</div>
+					<div className={s.figureContainer}>
+						<div className={s.figure} />
 					</div>
-					<input
-						className={s.button}
-						type='submit'
-					/>
-				</form>
+					</form>
+				</div>
 			) : (
 				<Result
 					userInputGroupe2={restClass}
