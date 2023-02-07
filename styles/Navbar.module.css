@@ -1,9 +1,9 @@
 .navbar {
 	max-width: 100%;
 	height: auto;
-	background-color: rgba(39,50,56,.9);
+	background-color: rgba(39, 50, 56, 0.85);
 	font-size: 1rem;
-	
+
 	/* flex */
 	display: flex;
 	align-items: center;
@@ -12,4 +12,3 @@
 .logo {
 	padding: 0.5rem;
 }
-
