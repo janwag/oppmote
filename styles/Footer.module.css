@@ -1,10 +1,10 @@
 .footer {
-	background: #3c3c3c;
+	background: #273238;
 	max-width: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
-	padding: .5rem;
+	padding: 0.5rem;
 }
 .text {
 	display: flex;
