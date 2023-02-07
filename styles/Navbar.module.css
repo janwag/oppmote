@@ -1,7 +1,7 @@
 .navbar {
 	max-width: 100%;
 	height: auto;
-	background-color: #3c3c3c;
+	background-color: rgba(39,50,56,.8);
 	font-size: 1rem;
 	
 	/* flex */
