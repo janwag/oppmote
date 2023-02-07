@@ -57,7 +57,7 @@
 	max-height: 13.9rem;
 	width: 100%;
 	margin-top: auto;
-	background-image: url(../assets/figure2.png);
+	background-image: url('../assets/figure2.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: top;

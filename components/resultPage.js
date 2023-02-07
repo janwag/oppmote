@@ -15,23 +15,25 @@ export default function Result({ cmsDataG1, userInputGroupe1, cmsDataG2, userInp
 			<div className={s.container}>
 				<div className={s.content}>
 					<Header>Din oppmøte prosent er {finalSum.toPrecision(4)}%</Header>
-					<button
-						className={s.button}
-						onClick={() => {
-							window.history.go('/pages/velgfag/[slug]')
-						}}>
-						Tilbake
-					</button>
-					<button
-						className={s.button}
-						onClick={() => {
-							window.history.back()
-						}}>
-						Ny utregning
-					</button>
-				</div>
-				<div className={s.figureContainer}>
-					<div className={s.figure} />
+					<div className={s.buttons}>
+						<button
+							className={s.button}
+							onClick={() => {
+								window.history.go('/pages/velgfag/[slug]')
+							}}>
+							Tilbake
+						</button>
+						<button
+							className={s.button}
+							onClick={() => {
+								window.history.back()
+							}}>
+							Ny utregning
+						</button>
+					</div>
+					<div className={s.figureContainer}>
+						<div className={s.figure}> </div>
+					</div>
 				</div>
 			</div>
 		</>
