@@ -5,7 +5,7 @@
 	overflow: hidden;
 }
 
-@media (orientation: landscape) and (max-width: 1024pxs) {
+@media (orientation: landscape) and (max-width: 1024px) {
 	.content {
 		display: none;
 	}
