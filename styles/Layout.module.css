@@ -4,3 +4,9 @@
 	flex-direction: column;
 	overflow: hidden;
 }
+
+@media (orientation: landscape) {
+	.content {
+		display: none;
+	}
+}
