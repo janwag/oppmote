@@ -57,3 +57,14 @@
 	background-repeat: no-repeat;
 	background-position: top;
 }
+
+@media screen and (min-width: 450px) {
+	.content {
+		max-width: 30rem;
+		margin: 0 auto;
+	}
+	.figure {
+		width: 14rem;
+		height: 23rem;
+	}
+}

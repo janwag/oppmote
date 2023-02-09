@@ -12,3 +12,18 @@
 .logo {
 	padding: 0.5rem;
 }
+
+@media screen and (min-width: 450px) {
+	.navbar {
+		justify-content: center;
+	}
+	.navbar a {
+		width: 30rem;
+		display: flex;
+	}
+
+	.logo img {
+		width: 3rem;
+		height: 3rem;
+	}
+}
