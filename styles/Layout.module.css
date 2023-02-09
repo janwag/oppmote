@@ -5,8 +5,20 @@
 	overflow: hidden;
 }
 
+.wrongWay {
+	display: none;
+}
+
 @media (orientation: landscape) and (max-width: 765px) {
 	.content {
 		display: none;
+	}
+
+	.wrongWay {
+		display: flex;
+		flex: 1 1;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 }
