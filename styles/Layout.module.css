@@ -9,12 +9,13 @@
 	display: none;
 }
 
-@media (orientation: landscape) and (max-width: 765px) {
+@media (orientation: landscape) and (max-width: 900px) {
 	.content {
 		display: none;
 	}
 
 	.wrongWay {
+		/* display: block; */
 		display: flex;
 		flex: 1 1;
 		flex-direction: column;
