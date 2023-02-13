@@ -7,14 +7,6 @@
 	padding: 0 1rem;
 }
 
-.content {
-	/* max-height: 32rem; */
-	overflow: scroll;
-	height: 100%;
-	max-width: 100%;
-	overflow-y: scroll;
-}
-
 .container h2 {
 	padding: 0.7rem 0rem;
 }
@@ -27,8 +19,24 @@
 	padding: 1rem 1.1rem;
 }
 
+.container a:any-link {
+	color: black;
+}
+
+.content {
+	/* max-height: 32rem; */
+	overflow: scroll;
+	height: 100%;
+	max-width: 100%;
+	overflow-y: scroll;
+}
+
 .menu {
 	padding: 1rem 0;
+}
+
+.menu a:any-link {
+	color: black;
 }
 
 @media screen and (min-width: 768px) {
