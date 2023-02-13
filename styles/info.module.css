@@ -27,7 +27,7 @@
 }
 
 .content {
-	/* max-height: 32rem; */
+	margin-bottom: 1rem;
 	overflow: scroll;
 	height: 100%;
 	max-width: 100%;
