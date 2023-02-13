@@ -4,24 +4,19 @@
 	background-color: #ff9a03;
 	display: flex;
 	flex-direction: column;
-	padding: 1rem;
+	padding: 0 1rem;
 }
 
 .content {
-	max-height: 32rem;
+	/* max-height: 32rem; */
 	overflow: scroll;
 	height: 100%;
 	max-width: 100%;
 	overflow-y: scroll;
-	padding: 1rem 0rem;
 }
 
 .container h2 {
 	padding: 0.7rem 0rem;
-}
-
-.container h1 {
-	padding: 1rem 0;
 }
 
 .container p {
@@ -30,6 +25,10 @@
 
 .container ul {
 	padding: 1rem 1.1rem;
+}
+
+.menu {
+	padding: 1rem 0;
 }
 
 @media screen and (min-width: 768px) {

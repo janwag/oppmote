@@ -20,8 +20,10 @@ export default function Info({ data }) {
 	})
 	return (
 		<div className={s.container}>
-			<h1>Info</h1>
-			{List}
+			<div className={s.menu}>
+				<h1>Info</h1>
+				{List}
+			</div>
 			<div className={s.content}>
 				<Content text={data[0].info} />
 			</div>
