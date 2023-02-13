@@ -5,37 +5,7 @@ export default {
 	fields: [
 		{
 			title: 'Om tjenesten',
-			name: 'about',
-			type: 'array',
-			of: [
-				{
-					type: 'block',
-				},
-			],
-		},
-		{
-			title: 'Hem står bak tjenesten',
-			name: 'whoMadeIt',
-			type: 'array',
-			of: [
-				{
-					type: 'block',
-				},
-			],
-		},
-		{
-			title: 'Vilkår og ansvarsfraskrivelse',
-			name: 'userAgreement',
-			type: 'array',
-			of: [
-				{
-					type: 'block',
-				},
-			],
-		},
-		{
-			title: 'Sist oppdatert',
-			name: 'lastUpdate',
+			name: 'info',
 			type: 'array',
 			of: [
 				{
