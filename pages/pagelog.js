@@ -2,16 +2,24 @@
 import s from '../styles/pagelog.module.css'
 import Link from 'next/link'
 import Header from '../components/Header'
-import Render from '../components/FetchChangeLog'
+import client from '../client'
+import groq from 'groq'
 
-const pagelog = () => {
+const pagelog = ({ data }) => {
+	console.log(data)
 	return (
 		<div className={s.container}>
 			<Header>Changelog</Header>
-			<ul>
-				<Render />
-			</ul>
 		</div>
 	)
 }
 export default pagelog
+
+export async function getServerSideProps() {
+	const data = await client.fetch(groq`*[_type == 'chagelog']`)
+	return {
+		props: {
+			data,
+		},
+	}
+}
