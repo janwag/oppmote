@@ -6,7 +6,15 @@ import { PortableText } from '@portabletext/react'
 export default function Info({ data }) {
 	const List = data[0].info.map((item) => {
 		if (item.style == 'h2') {
-			const nav = <li className={item.children[0].text}>{item.children[0].text}</li>
+			const id = '#' + item.children[0].text
+			const nav = (
+				<li
+					key={item._key}
+					className={item.children[0].text}>
+					<a href={id}>{item.children[0].text}</a>
+				</li>
+			)
+
 			return nav
 		}
 	})
@@ -14,8 +22,9 @@ export default function Info({ data }) {
 		<div className={s.container}>
 			<h1>Info</h1>
 			{List}
-			<Content text={data[0].info} />
-			<div className={s.content}></div>
+			<div className={s.content}>
+				<Content text={data[0].info} />
+			</div>
 		</div>
 	)
 }
