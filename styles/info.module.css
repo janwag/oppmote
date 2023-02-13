@@ -24,6 +24,16 @@
 	padding: 1rem 2rem;
 }
 
+.container h1 {
+	padding: 1rem 0;
+}
+.container h2 {
+	padding: 1rem 0;
+}
+.container p {
+	padding: 0.5rem 0;
+}
+
 @media screen and (min-width: 768px) {
 	.content {
 		height: 100%;

@@ -7,7 +7,6 @@ export default function Info({ data }) {
 	const List = data[0].info.map((item) => {
 		if (item.style == 'h2') {
 			const nav = <li className={item.children[0].text}>{item.children[0].text}</li>
-			console.log(nav)
 			return nav
 		}
 	})
@@ -24,7 +23,6 @@ export default function Info({ data }) {
 const Content = ({ text }) => {
 	const components = {
 		block: {
-			// Ex. 1: customizing common list types
 			bullet: ({ children }) => <ul>{children}</ul>,
 			h2: ({ children }) => <h2 id={children}>{children}</h2>,
 		},
