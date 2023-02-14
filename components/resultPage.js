@@ -14,7 +14,7 @@ export default function Result({ cmsDataG1, userInputGroupe1, cmsDataG2, userInp
 		<>
 			<div className={s.container}>
 				<div className={s.content}>
-					<Header>Din oppmøte prosent er {finalSum.toPrecision(4)}%</Header>
+					<Header>Din oppmøteprosent er {finalSum.toPrecision(4)}%</Header>
 					<div className={s.buttons}>
 						<button
 							className={s.button}

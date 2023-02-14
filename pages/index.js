@@ -15,7 +15,7 @@ function Home() {
 				<div className={s.content}>
 					<Header>Regn ut din oppmøteprosent</Header>
 					<div className={s.link}>
-						<Link href='/velgfag'>Velg Fag</Link>
+						<Link href='/velgfag'>Velg fag</Link>
 					</div>
 					<div className={s.figureContainer}>
 						<div className={s.figure} />

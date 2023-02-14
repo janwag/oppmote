@@ -32,7 +32,7 @@ const VelgFag = ({ data }) => {
 	})
 	return (
 		<div className={s.container}>
-			<Header>Velg fag du vil regne ut</Header>
+			<Header>Velg faget du vil regne ut</Header>
 			<ul className={s.list}>{result}</ul>
 		</div>
 	)
