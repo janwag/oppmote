@@ -6,17 +6,26 @@ import client from '../client'
 import groq from 'groq'
 
 const pagelog = ({ data }) => {
-	console.log(data)
 	return (
 		<div className={s.container}>
 			<Header>Changelog</Header>
+			<div className={s.content}>
+				{data.map((item) => {
+					return (
+						<>
+							<p>{item.date}:</p>
+							{item.text}
+						</>
+					)
+				})}
+			</div>
 		</div>
 	)
 }
 export default pagelog
 
 export async function getServerSideProps() {
-	const data = await client.fetch(groq`*[_type == 'chagelog']`)
+	const data = await client.fetch(groq`*[_type == "chagelog"] | order(_createdAt desc)`)
 	return {
 		props: {
 			data,

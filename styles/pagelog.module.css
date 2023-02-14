@@ -9,3 +9,17 @@
 .container h1 {
 	color: black;
 }
+
+.content {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+.content p {
+	margin: 0.5rem 0;
+	text-decoration: underline;
+}
