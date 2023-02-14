@@ -25,7 +25,7 @@ const pagelog = ({ data }) => {
 export default pagelog
 
 export async function getServerSideProps() {
-	const data = await client.fetch(groq`*[_type == "chagelog"] | order(_createdAt desc)`)
+	const data = await client.fetch(groq`*[_type == "chagelog"] | order(date desc)`)
 	return {
 		props: {
 			data,
