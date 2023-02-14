@@ -13,7 +13,7 @@ export default {
 			name: 'date',
 			type: 'date',
 			options: {
-				dateFormat: 'YYYY-MM-DD',
+				dateFormat: 'DD-MM-YYYY',
 				calendarTodayLabel: 'Today',
 			},
 		},

@@ -11,11 +11,11 @@ const pagelog = ({ data }) => {
 			<Header>Changelog</Header>
 			<div className={s.content}>
 				{data.map((item) => {
+					const date = item.date.split('-').reverse().join('-')
 					return (
-						<>
-							<p>{item.date}:</p>
-							{item.text}
-						</>
+						<p key={item._id}>
+							{date}:{item.text}
+						</p>
 					)
 				})}
 			</div>
