@@ -5,7 +5,7 @@ import NormalCalc from '../../components/normalCalc'
 import SemiarCalc from '../../components/seminarCalc'
 
 export default function ProfilePage({ dataFromCms }) {
-	if (dataFromCms.name != 'EXFAC') {
+	if (dataFromCms.name != 'JUS100 EXFAC') {
 		return <NormalCalc cmsdata={dataFromCms} />
 	} else {
 		return <SemiarCalc cmsdata={dataFromCms} />
