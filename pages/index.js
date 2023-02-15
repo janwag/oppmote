@@ -5,12 +5,6 @@ import s from '../styles/Home.module.css'
 function Home() {
 	return (
 		<>
-			<Head>
-				<meta
-					name='viewport'
-					content='initial-scale=1, viewport-fit=cover'></meta>
-			</Head>
-
 			<div className={s.container}>
 				<div className={s.content}>
 					<Header>Regn ut din oppmøteprosent</Header>
