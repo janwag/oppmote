@@ -49,7 +49,7 @@ export default function NormalCalc({ cmsdata }) {
 												type='number'
 												{...register(item.name)}
 											/>
-											av {item.class} {item.name}
+											av {item.class} {item.name.toLowerCase()}
 										</p>
 									</div>
 								)
@@ -70,7 +70,7 @@ export default function NormalCalc({ cmsdata }) {
 												type='number'
 												{...register(item.name)}
 											/>
-											av {item.class} {item.name}
+											av {item.class} {item.name.toLowerCase()}
 										</p>
 									</div>
 								)

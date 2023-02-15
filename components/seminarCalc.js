@@ -42,7 +42,7 @@ export default function SemiarCalc({ cmsdata }) {
 											type='number'
 											{...register(item.name)}
 										/>
-										av {item.class} {item.name}
+										av {item.class} {item.name.toLowerCase()}
 									</p>
 								</div>
 							)
