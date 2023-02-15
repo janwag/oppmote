@@ -17,4 +17,15 @@
 	flex-direction: column;
 	max-width: 90%;
 	margin: 0 auto;
+	justify-content: space-between;
+}
+
+.box {
+	display: flex;
+	margin:.5rem 0;
+}
+
+.content span {
+	display: flex;
+	justify-content: space-between;
 }
