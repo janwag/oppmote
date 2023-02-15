@@ -21,38 +21,43 @@ export default function SemiarCalc({ cmsdata }) {
 	return (
 		<>
 			{show == false ? (
-				<form
-					className={s.container}
-					onSubmit={handleSubmit(onSubmit)}>
+				<div className={s.container}>
 					<ClassNameHeader text={cmsdata.className} />
-					<div className={s.inputWrapper}>
-						{cmsdata.Gruppe2?.map((item) => {
-							return (
-								<div
-									key={item._key}
-									className={s.inputContainer}>
-									<p>
-										Jeg har fullført
-										<input
-											min='0'
-											max={item.class}
-											required
-											className={s.input}
-											key={item._id}
-											type='number'
-											{...register(item.name)}
-										/>
-										av {item.class} {item.name.toLowerCase()}
-									</p>
-								</div>
-							)
-						})}
-					</div>
-					<input
-						className={s.button}
-						type='submit'
-					/>
-				</form>
+					<form
+						className={s.fields}
+						onSubmit={handleSubmit(onSubmit)}>
+						<div className={s.inputWrapper}>
+							{cmsdata.Gruppe2?.map((item) => {
+								return (
+									<div
+										key={item._key}
+										className={s.inputContainer}>
+										<p>
+											Jeg har fullført
+											<input
+												min='0'
+												max={item.class}
+												required
+												className={s.input}
+												key={item._id}
+												type='number'
+												{...register(item.name)}
+											/>
+											av {item.class} {item.name.toLowerCase()}
+										</p>
+									</div>
+								)
+							})}
+							<input
+								className={s.button}
+								type='submit'
+							/>
+						</div>
+						<div className={s.figureContainer}>
+							<div className={s.figure} />
+						</div>
+					</form>
+				</div>
 			) : (
 				<SeminarResult
 					dataFromCms={cmsdata}
