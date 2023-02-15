@@ -32,7 +32,7 @@ export default function SemiarCalc({ cmsdata }) {
 									key={item._key}
 									className={s.inputContainer}>
 									<p>
-										Jeg har deltatt på
+										Jeg har fullført
 										<input
 											min='0'
 											max={item.class}

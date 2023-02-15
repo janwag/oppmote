@@ -39,7 +39,7 @@ export default function NormalCalc({ cmsdata }) {
 										key={item._key}
 										className={s.inputContainer}>
 										<p>
-											Jeg har deltatt på
+											Jeg har fullført
 											<input
 												min='0'
 												max={item.class}
@@ -60,7 +60,7 @@ export default function NormalCalc({ cmsdata }) {
 										key={item._key}
 										className={s.inputContainer}>
 										<p>
-											Jeg har deltat på
+											Jeg har fullført
 											<input
 												min='0'
 												max={item.class}
@@ -80,9 +80,9 @@ export default function NormalCalc({ cmsdata }) {
 								type='submit'
 							/>
 						</div>
-					<div className={s.figureContainer}>
-						<div className={s.figure} />
-					</div>
+						<div className={s.figureContainer}>
+							<div className={s.figure} />
+						</div>
 					</form>
 				</div>
 			) : (
