@@ -14,7 +14,7 @@ const pagelog = ({ data }) => {
 					const date = item.date.split('-').reverse().join('-')
 					return (
 						<p key={item._id}>
-							{date}:{item.text}
+							{date}: {item.text}
 						</p>
 					)
 				})}
