@@ -9,7 +9,7 @@ const SeminarResult = ({ dataFromCms, userInputGroupe2 }) => {
 	return (
 		<div className={s.container}>
 			<div className={s.content}>
-				<Header>Din oppmøte prosent er {finalSum}%</Header>
+				<Header>Din oppmøteprosent																																																																																											 er {finalSum}%</Header>
 				<button
 					className={s.button}
 					onClick={() => {
