@@ -2,6 +2,7 @@ import groq from 'groq'
 import s from '../styles/info.module.css'
 import sanityClient from '../client'
 import { PortableText } from '@portabletext/react'
+import Head from 'next/head'
 
 export default function Info({ data }) {
 	const List = data[0].info.map((item) => {
@@ -19,15 +20,20 @@ export default function Info({ data }) {
 		}
 	})
 	return (
-		<div className={s.container}>
-			<div className={s.menu}>
-				<h1>Info</h1>
-				{List}
+		<>
+			<Head>
+				<title>Viktig informasjon | Oppmøteprosent</title>
+			</Head>
+			<div className={s.container}>
+				<div className={s.menu}>
+					<h1>Info</h1>
+					{List}
+				</div>
+				<div className={s.content}>
+					<Content text={data[0].info} />
+				</div>
 			</div>
-			<div className={s.content}>
-				<Content text={data[0].info} />
-			</div>
-		</div>
+		</>
 	)
 }
 

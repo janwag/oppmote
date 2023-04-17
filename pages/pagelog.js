@@ -4,26 +4,32 @@ import Link from 'next/link'
 import Header from '../components/Header'
 import client from '../client'
 import groq from 'groq'
+import Head from 'next/head'
 
 const pagelog = ({ data }) => {
 	return (
-		<div className={s.container}>
-			<Header>Changelog</Header>
-			<div className={s.content}>
-				{data.map((item) => {
-					const date = item.date.split('-').reverse().join('-')
-					return (
-						<div
-							className={s.box}
-							key={item._id}>
-							<p>
-								{date}: {item.text}
-							</p>
-						</div>
-					)
-				})}
+		<>
+			<Head>
+				<title>Changelog | Oppmøteprosent</title>
+			</Head>
+			<div className={s.container}>
+				<Header>Changelog</Header>
+				<div className={s.content}>
+					{data.map((item) => {
+						const date = item.date.split('-').reverse().join('-')
+						return (
+							<div
+								className={s.box}
+								key={item._id}>
+								<p>
+									{date}: {item.text}
+								</p>
+							</div>
+						)
+					})}
+				</div>
 			</div>
-		</div>
+		</>
 	)
 }
 export default pagelog

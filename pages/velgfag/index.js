@@ -2,6 +2,7 @@ import Link from 'next/link'
 import s from '../../styles/VelgFag.module.css'
 import groq from 'groq'
 import Header from '../../components/Header'
+import Head from 'next/head'
 
 export async function getServerSideProps() {
 	const url = 'https://qmgpu00g.api.sanity.io/v1/data/query/production?query='
@@ -31,10 +32,15 @@ const VelgFag = ({ data }) => {
 		)
 	})
 	return (
-		<div className={s.container}>
-			<Header>Velg faget du vil regne ut</Header>
-			<ul className={s.list}>{result}</ul>
-		</div>
+		<>
+			<Head>
+				<title>Velg fag | Oppmøteprosent</title>
+			</Head>
+			<div className={s.container}>
+				<Header>Velg faget du vil regne ut</Header>
+				<ul className={s.list}>{result}</ul>
+			</div>
+		</>
 	)
 }
 

@@ -5,6 +5,9 @@ import s from '../styles/Home.module.css'
 function Home() {
 	return (
 		<>
+			<Head>
+				<title>Hjem | Oppmøteprosent</title>
+			</Head>
 			<div className={s.container}>
 				<div className={s.content}>
 					<Header>Regn ut din oppmøteprosent</Header>

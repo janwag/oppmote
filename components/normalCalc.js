@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import Result from './resultPage'
 import s from '../styles/slug.module.css'
 import ClassNameHeader from '../components/ClassNameHeader'
+import Head from 'next/head'
 
 export default function NormalCalc({ cmsdata }) {
 	const [show, setShow] = useState(false)
@@ -26,6 +27,10 @@ export default function NormalCalc({ cmsdata }) {
 	}
 	return (
 		<>
+			<Head>
+			
+				<title>{cmsdata.name}</title>
+			</Head>
 			{show == false ? (
 				<div className={s.container}>
 					<ClassNameHeader text={cmsdata.className} />

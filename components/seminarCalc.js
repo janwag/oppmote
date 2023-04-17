@@ -4,6 +4,7 @@ import Result from './resultPage'
 import s from '../styles/slug.module.css'
 import ClassNameHeader from '../components/ClassNameHeader'
 import SeminarResult from './seminarResult'
+import Head from 'next/head'
 
 export default function SemiarCalc({ cmsdata }) {
 	const [show, setShow] = useState(false)
@@ -20,6 +21,9 @@ export default function SemiarCalc({ cmsdata }) {
 	}
 	return (
 		<>
+			<Head>
+				<title>{cmsdata.name}</title>
+			</Head>
 			{show == false ? (
 				<div className={s.container}>
 					<ClassNameHeader text={cmsdata.className} />
